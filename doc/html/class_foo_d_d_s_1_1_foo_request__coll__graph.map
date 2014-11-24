@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classeprosima_1_1rpc_1_1protocol_1_1dds_1_1_request_header.html" title="Header information used in all generated request topics." alt="" coords="5,101,288,131"/>
+<area shape="rect" id="node4" href="$classeprosima_1_1rpc_1_1protocol_1_1dds_1_1_identification.html" title="This class is used to identify clients." alt="" coords="8,5,275,35"/>
+<area shape="rect" id="node6" href="$class_foo_d_d_s_1_1_foo_request__union.html" title="This class represents the union used in the DDS topic to encapsulate the operations..." alt="" coords="320,101,509,131"/>
+<area shape="rect" id="node8" href="$class_foo_d_d_s_1_1_foo___foo_procedure_request.html" title="This class represents the structure Foo_FooProcedureRequest that can be used to send/receive..." alt="" coords="299,5,539,35"/>
+</map>

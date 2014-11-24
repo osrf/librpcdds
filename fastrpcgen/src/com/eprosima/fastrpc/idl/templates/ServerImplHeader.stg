@@ -1,0 +1,76 @@
+group ServerImplHeader;
+
+main(ctx, definitions) ::= <<
+$fileHeader(ctx=ctx,  file=[ctx.filename, "ServerImpl.h"], description=["This header file contains the declaration of the skeleton for all interfaces."])$
+
+#ifndef _$ctx.filename;format="toUpper"$SERVER_IMPL_H_
+#define _$ctx.filename;format="toUpper"$SERVER_IMPL_H_
+
+#include "$ctx.product$/utils/Messages.h"
+#include "$ctx.filename$.h"
+
+$definitions; separator="\n"$
+
+#endif // _$ctx.filename;format="toUpper"$SERVER_IMPL_H_
+>>
+
+module(ctx, module, definition_list) ::= <<
+namespace $module.name$
+{
+    $definition_list$
+};
+
+>>
+
+definition_list(definitions) ::= <<
+$definitions; separator="\n"$
+>>
+
+/*!
+ * The export_list will be the definition of synchronize functions.
+ */
+interface(ctx, interface, export_list) ::= <<
+/*!
+ * @brief This class is the skeleton of the servant and its remote procedures has to be implemented.
+ * @ingroup $ctx.trimfilename$
+ */
+class $interface.name$ServerImpl
+{
+    public:
+
+        //! @brief The default constructor.
+        $interface.name$ServerImpl(){}
+
+        //! @brief Destructor.
+        virtual ~$interface.name$ServerImpl(){}
+
+        $export_list$;
+};
+
+>>
+
+export_list(exports) ::= <<
+$exports; separator="\n"$
+>>
+
+exception(ctx, exception) ::= <<>>
+
+operation(ctx, operation, param_list) ::= <<
+//! @brief Skeleton of the operation $operation.name$.
+virtual $paramRetType(operation.rettype)$ $operation.name$($paramDeclsOnlyOutByRef(params=operation.parameters)$) = 0;
+
+>>
+
+param_list(parameters) ::= <<>>
+
+param(parameter) ::= <<>>
+
+const_decl(ctx, const) ::= <<>>
+
+typedef_decl(ctx, typedefs) ::= <<>>
+
+struct_type(ctx, struct) ::= <<>>
+
+union_type(ctx, union) ::= <<>>
+
+enum_type(ctx, enum) ::= <<>>

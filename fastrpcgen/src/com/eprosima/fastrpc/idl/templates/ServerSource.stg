@@ -1,0 +1,75 @@
+group ServerSource;
+
+main(ctx, definitions) ::= <<
+$fileHeader(ctx=ctx,  file=[ctx.filename, "Server.cxx"], description=["This source file contains the definition of the server for all interfaces."])$
+
+#include "$ctx.filename$Server.h"
+#include "$ctx.product$/strategies/ServerStrategy.h"
+#include "$ctx.product$/transports/ServerTransport.h"
+#include "$ctx.filename$Protocol.h"
+#include "$ctx.product$/exceptions/ServerInternalException.h"
+
+$if(ctx.rtiTypes)$
+$ctx.includeDependencies : { include |#include "$include$Exceptions.h"}; separator="\n"$
+
+#include "$ctx.filename$Exceptions.h"
+
+$endif$
+
+$definitions; separator="\n"$
+>>
+
+module(ctx, module, definition_list) ::= <<
+namespace $module.name$
+{
+    $definition_list$
+};
+
+>>
+
+definition_list(definitions) ::= <<
+$definitions; separator="\n"$
+>>
+
+/*!
+ * The export_list will be the definition of synchronize functions.
+ */
+interface(ctx, interface, export_list) ::= <<
+$interface.name$Server::$interface.name$Server(eprosima::rpc::strategy::ServerStrategy &strategy, eprosima::rpc::transport::ServerTransport &transport,
+            eprosima::rpc::protocol::$ctx.filename$Protocol &protocol, $interface.name$ServerImpl &servant) :
+    Server(strategy, transport, protocol), _impl(servant)
+{
+   protocol.activateInterface("$interface.scopedname$");
+   protocol.link$interface.formatedScopedname$Impl(servant);
+}
+
+$interface.name$Server::~$interface.name$Server()
+{
+    //TODO Unlink an deactivate.
+}
+
+$export_list$
+
+>>
+
+export_list(exports) ::= <<
+$exports; separator="\n"$
+>>
+
+exception(ctx, exception) ::= <<>>
+
+operation(ctx, operation, param_list) ::= <<>>
+
+param_list(parameters) ::= <<>>
+
+param(parameter) ::= <<>>
+
+const_decl(ctx, const) ::= <<>>
+
+typedef_decl(ctx, typedefs) ::= <<>>
+
+struct_type(ctx, struct) ::= <<>>
+
+union_type(ctx, union) ::= <<>>
+
+enum_type(ctx, enum) ::= <<>>
