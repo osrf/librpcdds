@@ -1,0 +1,26 @@
+From: Esteve Fernandez <esteve@osrfoundation.org>
+Date: Mon, 24 Nov 2014 17:11:16 -0800
+Subject: Import jar from the correct path
+
+---
+ scripts/rpcddsgen.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/rpcddsgen.sh b/scripts/rpcddsgen.sh
+index b6f71ff..a3feff5 100755
+--- a/scripts/rpcddsgen.sh
++++ b/scripts/rpcddsgen.sh
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-dir="`dirname \"$0\"`"
++dir="/usr/share/rpcdds"
+ 
+ java_exec=java
+ 
+@@ -11,4 +11,4 @@ if [ $? != 0 ]; then
+     java_exec="${JAVA_HOME}/bin/java"
+ fi
+ 
+-exec $java_exec -jar "$dir/../classes/rpcddsgen.jar" "$@"
++exec $java_exec -jar "$dir/rpcddsgen.jar" "$@"

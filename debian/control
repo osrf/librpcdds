@@ -1,0 +1,30 @@
+Source: librpcdds
+Priority: optional
+Maintainer: Esteve Fernandez <esteve@osrfoundation.org>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libfastcdr-dev, cdbs, dh-autoreconf
+Standards-Version: 3.9.4
+Section: libs
+Homepage: http://www.eprosima.com/index.php/en/products-all/eprosima-rpc-over-dds-all
+#Vcs-Git: git://git.debian.org/collab-maint/librpcdds.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/librpcdds.git;a=summary
+
+Package: librpcdds-dev
+Section: libdevel
+Architecture: any
+Depends: librpcdds0 (= ${binary:Version}), libfastcdr-dev
+Description: eProsima RPC over DDS framework (devel)
+ eProsima RPC over DDS framework (devel)
+
+Package: librpcdds0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: eProsima RPC over DDS framework
+ eProsima RPC over DDS framework
+
+Package: rpcdds-tools
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: eProsima RPC over DDS framework (tools)
+ eProsima RPC over DDS framework (tools)

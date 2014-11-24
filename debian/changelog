@@ -1,0 +1,5 @@
+librpcdds (0.3.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Esteve Fernandez <esteve@osrfoundation.org>  Mon, 24 Nov 2014 15:19:53 -0800
