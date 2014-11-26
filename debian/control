@@ -1,7 +1,7 @@
 Source: librpcdds
 Priority: optional
 Maintainer: Esteve Fernandez <esteve@osrfoundation.org>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev, libfastcdr-dev, cdbs, dh-autoreconf, libboost-dev, libboost-thread-dev
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libfastcdr0-dev, cdbs, dh-autoreconf, libboost-dev, libboost-thread-dev, librticonnextdds51-dev
 Standards-Version: 3.9.4
 Section: libs
 Homepage: http://www.eprosima.com/index.php/en/products-all/eprosima-rpc-over-dds-all
