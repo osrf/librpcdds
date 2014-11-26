@@ -8,10 +8,10 @@ Homepage: http://www.eprosima.com/index.php/en/products-all/eprosima-rpc-over-dd
 #Vcs-Git: git://git.debian.org/collab-maint/librpcdds.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/librpcdds.git;a=summary
 
-Package: librpcdds-dev
+Package: librpcdds0-dev
 Section: libdevel
 Architecture: any
-Depends: librpcdds0 (= ${binary:Version}), libfastcdr-dev
+Depends: librpcdds0 (= ${binary:Version}), libfastcdr0-dev
 Description: eProsima RPC over DDS framework (devel)
  eProsima RPC over DDS framework (devel)
 
