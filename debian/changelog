@@ -1,3 +1,9 @@
+librpcdds (0.3.2-2) unstable; urgency=medium
+
+  * Added version number to development package.
+
+ -- Esteve Fernandez <esteve@osrfoundation.org>  Tue, 25 Nov 2014 17:08:41 -0800
+
 librpcdds (0.3.2-1) unstable; urgency=low
 
   * Initial release.
