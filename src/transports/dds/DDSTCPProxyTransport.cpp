@@ -7,14 +7,14 @@
  *************************************************************************/
 
 #include "rpcdds/transports/dds/TCPProxyTransport.h"
-#include "eProsima_cpp/eProsimaMacros.h"
+#include "rpcdds/utils/macros/snprintf.h"
 
 static const char* const CLASS_NAME = "eprosima::rpc::transport::dds::TCPProxyTransport";
 
 using namespace eprosima::rpc::transport::dds;
 
-TCPProxyTransport::TCPProxyTransport(const char *to_connect, std::string remoteServiceName, int domainId, long milliseconds) :
-    m_to_connect(NULL), ProxyTransport(remoteServiceName, domainId, milliseconds)
+TCPProxyTransport::TCPProxyTransport(const char* const &to_connect, const char* const &remoteServiceName, const char* const &instanceName, int domainId, long milliseconds) :
+    ProxyTransport(remoteServiceName, instanceName, domainId, milliseconds), m_to_connect(NULL) 
 {
     m_to_connect = strdup(to_connect);
 }

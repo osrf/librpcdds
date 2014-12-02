@@ -1,0 +1,9 @@
+digraph "includetmp/rpcdds/transports/components" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_fa71577d92ed811a870d41d9b7cd6be8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="transports" fontname="Helvetica", fontsize="10", URL="dir_fa71577d92ed811a870d41d9b7cd6be8.html"]
+  dir_e748800c30e50f6676897f06c3e3aa63 [shape=box, label="components", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e748800c30e50f6676897f06c3e3aa63.html"];
+  }
+}

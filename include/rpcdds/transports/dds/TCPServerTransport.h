@@ -25,7 +25,7 @@ namespace eprosima
                  * This transport can only be used by a server.
                  * @ingroup TRANSPORTMODULE
                  */
-                class FASTRPC_DllAPI TCPServerTransport : public ServerTransport
+                class TCPServerTransport : public ServerTransport
                 {
                     public:
 
@@ -36,14 +36,14 @@ namespace eprosima
                          *        The user has to configure his router for this purpose. For example: "218.18.3.133:7600"
                          * @param server_bind_port Port used by the server in his machine. This port will be used in the router for port forwarding
                          *        between the public port and this port.
-						 * @param remoteServiceName Name of the remote service
+						 * @param serviceName Name of the remote service
                          * @param domainId Optional parameter that specifies the domain identifier to be used in DDS.
                          */
-                        TCPServerTransport(const char *public_address, const char *server_bind_port, std::string serviceName, int domainId = 0);
+                        FASTRPC_DllAPI TCPServerTransport(const char* const &public_address, const char* const &server_bind_port, const char* const &serviceName, const char* const &instanceName, int domainId = 0);
 
 
                         //! @brief Default destructor.
-                        virtual ~TCPServerTransport();
+                        virtual FASTRPC_DllAPI ~TCPServerTransport();
 
                         /*!
                          * @brief This function sets the QoS to use the TCPv4 transport.
@@ -51,7 +51,7 @@ namespace eprosima
                          * @param participantQos Reference to the DDS domain participant QoS.
                          * @param participant The domain participant that will be set to use TCPv4 transport.
                          */
-                        virtual int setTransport(DDS::DomainParticipantQos &participantQos, DDS::DomainParticipant *participant);
+                        virtual FASTRPC_DllAPI int setTransport(DDS_DomainParticipantQos &participantQos, DDSDomainParticipant *participant);
 
                     private:
 

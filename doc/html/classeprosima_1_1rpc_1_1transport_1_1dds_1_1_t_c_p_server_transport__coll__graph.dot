@@ -1,0 +1,15 @@
+digraph "eprosima::rpc::transport::dds::TCPServerTransport"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="eprosima::rpc::transport\l::dds::TCPServerTransport",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="eprosima::rpc::transport\l::dds::ServerTransport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_server_transport.html",tooltip="This class is the base of all classes that implement a transport using DDS. This transport can be use..."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="eprosima::rpc::transport\l::ServerTransport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1transport_1_1_server_transport.html",tooltip="This interface is the base of all classes that implement a transport that can be used by the server..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="eprosima::rpc::transport\l::Transport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1transport_1_1_transport.html",tooltip="This class is the base of all classes that implement a transport that could be used by the proxy or t..."];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="eprosima::rpc::transport\l::dds::Transport",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_transport.html",tooltip="This class is the base of all classes that implement a transport using DDS. This transport could be u..."];
+}

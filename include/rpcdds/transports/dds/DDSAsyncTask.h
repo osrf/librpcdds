@@ -11,8 +11,9 @@
 
 #include "rpcdds/fastrpc_dll.h"
 #include "rpcdds/transports/AsyncTask.h"
-#include "rpcdds/utils/dds/Middleware.h"
 #include "rpcdds/exceptions/SystemException.h"
+
+class DDSQueryCondition;
 
 namespace eprosima
 {
@@ -48,7 +49,7 @@ namespace eprosima
                          *
                          * \param query Query condition associated with this asynchronous task.
                          */
-                        void execute(DDS::QueryCondition *query);
+                        void execute(DDSQueryCondition *query);
 
 						/*!
 						 * @brief Sets the procedure endpoint

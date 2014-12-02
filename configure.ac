@@ -1,4 +1,4 @@
-AC_INIT([rpcdds], [0.3.2], [support@eprosima.com], [rpcdds], [http://eprosima.com/])
+AC_INIT([rpcdds], [0.4.0], [support@eprosima.com], [rpcdds], [http://eprosima.com/])
 AC_PREREQ([2.59])
 AC_CHECK_HEADER([$NDDSHOME/include/ndds/ndds_version.h],
 	[AC_MSG_NOTICE([Found RTI DDS])],
@@ -8,9 +8,10 @@ AC_CHECK_HEADER([fastcdr/FastCdr_version.h],
 	[AC_MSG_NOTICE([Found eProsima fastcdr])],
 	[AC_MSG_ERROR([Could not find eProsima fastcdr])],
 	[])
-AM_INIT_AUTOMAKE([1.10 no-define foreign])
+AM_INIT_AUTOMAKE([1.10 no-define foreign subdir-objects])
 AC_PROG_CXX
 LT_INIT
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_FILES([Makefile include/Makefile])
 
 # Check endianess

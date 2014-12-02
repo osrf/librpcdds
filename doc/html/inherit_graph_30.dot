@@ -1,0 +1,13 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DDSTypeSupport",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="FooDDS::Foo_ReplyPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_foo_d_d_s_1_1_foo___reply_plugin.html",tooltip="This class encapsulates the methods used on DDS topics by DDS middleware. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FooDDS::Foo_RequestPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_foo_d_d_s_1_1_foo___request_plugin.html",tooltip="This class encapsulates the methods used on DDS topics by DDS middleware. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FooDDS::FooPlugin::\lFooProcedure_ResultPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_foo_d_d_s_1_1_foo_plugin_1_1_foo_procedure___result_plugin.html",tooltip="This class encapsulates the methods used on DDS topics by DDS middleware. "];
+}

@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classeprosima_1_1rpc_1_1strategy_1_1_server_strategy.html" title="This class is the base of all classes that implement a server strategy. that could..." alt="" coords="5,59,256,88"/>
-<area shape="rect" id="node3" href="$classeprosima_1_1rpc_1_1strategy_1_1_single_thread_strategy.html" title="This class implements the sigle thread strategy. The server uses a reception thread..." alt="" coords="321,5,609,35"/>
-<area shape="rect" id="node5" href="$classeprosima_1_1rpc_1_1strategy_1_1_thread_per_request_strategy.html" title="This class implements the thread per request strategy. The server creates a new thread..." alt="" coords="304,59,627,88"/>
-<area shape="rect" id="node7" href="$classeprosima_1_1rpc_1_1strategy_1_1_thread_pool_strategy.html" title="This class implements a thread pool strategy. The server schedules the incoming requests..." alt="" coords="327,112,604,141"/>
-</map>

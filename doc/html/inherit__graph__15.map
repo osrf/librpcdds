@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classeprosima_1_1rpc_1_1transport_1_1_endpoint.html" title="This class represents an endpoint." alt="" coords="5,32,224,61"/>
-<area shape="rect" id="node3" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_proxy_procedure_endpoint.html" title="This class represents a remote endpoint used by a proxy. It also encapsulates the..." alt="" coords="275,5,616,35"/>
-<area shape="rect" id="node5" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_server_procedure_endpoint.html" title="This class represents a remote endpoint used by a proxy. Also this class encapsulate..." alt="" coords="273,59,617,88"/>
-</map>

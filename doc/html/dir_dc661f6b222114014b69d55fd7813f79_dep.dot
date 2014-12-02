@@ -1,0 +1,13 @@
+digraph "utils/doxygen/examples" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_73d8f13026f28556173c18aac3e34bfc {
+    graph [ bgcolor="#ddddee", pencolor="black", label="doxygen" fontname="Helvetica", fontsize="10", URL="dir_73d8f13026f28556173c18aac3e34bfc.html"]
+  subgraph clusterdir_dc661f6b222114014b69d55fd7813f79 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_dc661f6b222114014b69d55fd7813f79.html"];
+    dir_dc661f6b222114014b69d55fd7813f79 [shape=plaintext label="examples"];
+    dir_5a34dca2c9d700ce6bc2f92e54da4948 [shape=box label="dds" color="black" fillcolor="white" style="filled" URL="dir_5a34dca2c9d700ce6bc2f92e54da4948.html"];
+  }
+  }
+}

@@ -1,0 +1,9 @@
+digraph "utils/doxygen/examples/dds" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_dc661f6b222114014b69d55fd7813f79 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="examples" fontname="Helvetica", fontsize="10", URL="dir_dc661f6b222114014b69d55fd7813f79.html"]
+  dir_5a34dca2c9d700ce6bc2f92e54da4948 [shape=box, label="dds", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5a34dca2c9d700ce6bc2f92e54da4948.html"];
+  }
+}

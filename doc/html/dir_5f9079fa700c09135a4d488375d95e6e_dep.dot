@@ -1,0 +1,9 @@
+digraph "includetmp/rpcdds/client" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_8faf118d15cf0d3dc00c97efc5e6d092 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="rpcdds" fontname="Helvetica", fontsize="10", URL="dir_8faf118d15cf0d3dc00c97efc5e6d092.html"]
+  dir_5f9079fa700c09135a4d488375d95e6e [shape=box, label="client", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5f9079fa700c09135a4d488375d95e6e.html"];
+  }
+}
