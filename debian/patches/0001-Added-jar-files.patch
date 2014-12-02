@@ -7,7 +7,7 @@ Subject: Added jar files
  1 file changed, 3 insertions(+)
 
 diff --git a/Makefile.am b/Makefile.am
-index 54f0da5..81c3272 100644
+index 54f0da5..a117abb 100644
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -15,6 +15,9 @@ rpcdds_licencias_DATA = RPCDDS_LICENSE.txt LGPLv3_LICENSE.txt
@@ -15,7 +15,7 @@ index 54f0da5..81c3272 100644
  rpcdds_script_DATA = scripts/rpcddsgen.sh
  
 +rpcdds_generatordir = $(datadir)/rpcdds
-+rpcdds_generator_DATA = classes/antlr-2.7.7.jar classes/rpcddsgen.jar classes/antxr.jar classes/stringtemplate-3.2.1.jar
++rpcdds_generator_DATA = classes/rpcddsgen.jar
 +
  install-data-hook:
  	mkdir -p $(DESTDIR)$(datadir)/doc/rpcdds; \
