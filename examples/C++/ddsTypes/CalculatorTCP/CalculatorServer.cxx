@@ -1,8 +1,8 @@
 /*************************************************************************
- * Copyright (c) 2012 eProsima. All rights reserved.
+ * Copyright (c) 2013 eProsima. All rights reserved.
  *
  * This generated file is licensed to you under the terms described in the
- * FASTRPC_LICENSE file included in this FASTRPC distribution.
+ * rpcdds_LICENSE file included in this rpcdds distribution.
  *
  *************************************************************************
  * 
@@ -17,9 +17,6 @@
 #include "rpcdds/transports/ServerTransport.h"
 #include "CalculatorProtocol.h"
 #include "rpcdds/exceptions/ServerInternalException.h"
-
-
-#include "CalculatorExceptions.h"
 
 CalculatorServer::CalculatorServer(eprosima::rpc::strategy::ServerStrategy &strategy, eprosima::rpc::transport::ServerTransport &transport,
             eprosima::rpc::protocol::CalculatorProtocol &protocol, CalculatorServerImpl &servant) :

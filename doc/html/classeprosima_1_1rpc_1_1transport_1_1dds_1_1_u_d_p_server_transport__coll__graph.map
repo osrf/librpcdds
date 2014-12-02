@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_server_transport.html" title="This class is the base of all classes that implement a transport using DDS. This..." alt="" coords="1024,67,1315,96"/>
-<area shape="rect" id="node4" href="$classeprosima_1_1rpc_1_1transport_1_1_server_transport.html" title="This interface is the base of all classes that implement a transport that can be..." alt="" coords="712,35,973,64"/>
-<area shape="rect" id="node6" href="$classeprosima_1_1rpc_1_1transport_1_1_transport.html" title="This class is the base of all classes that implement a transport that could be used..." alt="" coords="7,5,228,35"/>
-<area shape="rect" id="node8" href="$classeprosima_1_1rpc_1_1protocol_1_1_protocol.html" title="This abstract class represents the protocol used by the RPCs. It serializes and deserializes..." alt="" coords="367,35,577,64"/>
-<area shape="rect" id="node11" href="$classeprosima_1_1rpc_1_1strategy_1_1_server_strategy.html" title="This class is the base of all classes that implement a server strategy. that could..." alt="" coords="347,88,597,117"/>
-<area shape="rect" id="node13" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_transport.html" title="This class is the base of all classes that implement a transport using DDS. This..." alt="" coords="717,88,968,117"/>
-</map>

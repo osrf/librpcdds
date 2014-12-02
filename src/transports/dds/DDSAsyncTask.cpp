@@ -10,6 +10,7 @@
 #include "rpcdds/transports/dds/components/ProxyProcedureEndpoint.h"
 #include "rpcdds/exceptions/ClientInternalException.h"
 #include "rpcdds/exceptions/ServerTimeoutException.h"
+#include "rpcdds/utils/dds/Middleware.h"
 
 using namespace eprosima::rpc;
 using namespace ::transport::dds;
@@ -17,7 +18,7 @@ using namespace ::exception;
 
 static const char* const CLASS_NAME = "eprosima::rpc::transport::dds::DDSAsyncTask";
 
-DDSAsyncTask::DDSAsyncTask() : m_pe(NULL), eprosima::rpc::transport::AsyncTask()
+DDSAsyncTask::DDSAsyncTask() : eprosima::rpc::transport::AsyncTask(), m_pe(NULL)
 {
 }
 
@@ -31,7 +32,7 @@ ProxyProcedureEndpoint* DDSAsyncTask::getProcedureEndpoint()
     return m_pe;
 }
 
-void DDSAsyncTask::execute(DDS::QueryCondition *query)
+void DDSAsyncTask::execute(DDSQueryCondition *query)
 {
     const char* const METHOD_NAME = "execute";
 
@@ -39,7 +40,7 @@ void DDSAsyncTask::execute(DDS::QueryCondition *query)
     {
         ReturnMessage retCode = m_pe->takeReply(getReplyInstance(), query);
 
-        if(retCode == OPERATION_SUCCESSFUL)
+        if(retCode == OK)
         {
             this->execute();
         }
@@ -47,7 +48,7 @@ void DDSAsyncTask::execute(DDS::QueryCondition *query)
         {
             this->on_exception(ClientInternalException("Error taking the reply"));
         }
-        else if(retCode == SERVER_TIMEOUT)
+        else if(retCode == TIMEOUT)
         {
             this->on_exception(ServerTimeoutException("Error taking the reply"));
         }

@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>MessageHeader</ProjectName>
-    <ProjectGuid>{984F08F4-B497-1179-344F-C51F4E46E662}</ProjectGuid>
+    <ProjectGuid>{CD8D2936-C6EA-1543-EB13-1FA8A2D45B3D}</ProjectGuid>
     <RootNamespace>MessageHeader</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -29,24 +29,36 @@
       <UseDebugLibraries>true</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="Configuration">
       <ConfigurationType>DynamicLibrary</ConfigurationType>
       <UseDebugLibraries>false</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
       <ConfigurationType>StaticLibrary</ConfigurationType>
       <UseDebugLibraries>true</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
       <ConfigurationType>StaticLibrary</ConfigurationType>
       <UseDebugLibraries>false</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -89,14 +101,14 @@
         <WarningLevel>Level3</WarningLevel>
         <Optimization>Disabled</Optimization>
         <AdditionalIncludeDirectories>$(RPCDDSHOME)/include;$(NDDSHOME)/include;$(NDDSHOME)/include/ndds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDDS_DLL_VARIABLE;WIN32_LEAN_AND_MEAN;_DEBUG;NDDS_USER_DLL_EXPORT;;EPROSIMA_ALL_DYN_LINK;EPROSIMA_USER_DLL_EXPORT;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDDS_DLL_VARIABLE;WIN32_LEAN_AND_MEAN;_DEBUG;NDDS_USER_DLL_EXPORT;;MessageHeader_SOURCE;EPROSIMA_ALL_DYN_LINK;EPROSIMA_USER_DLL_EXPORT;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
         <PrecompiledHeader>NotUsing</PrecompiledHeader>
         <PrecompiledHeaderFile>
         </PrecompiledHeaderFile>
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscored.lib;nddscd.lib;nddscppd.lib;rpcddsd-0.3.0.lib;
+        <AdditionalDependencies>nddscored.lib;nddscd.lib;nddscppd.lib;
   ;%(AdditionalDependencies)</AdditionalDependencies>
         <OutputFile>$(TargetDir)$(TargetName)$(TargetExt)</OutputFile>
         <AdditionalLibraryDirectories>$(RPCDDSHOME)/lib/x64Win64VS2010;$(NDDSHOME)/lib/x64Win64VS2010;.\lib\x64Win64VS2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -108,14 +120,14 @@
         <WarningLevel>Level3</WarningLevel>
         <Optimization>MaxSpeed</Optimization>
         <AdditionalIncludeDirectories>$(RPCDDSHOME)/include;$(NDDSHOME)/include;$(NDDSHOME)/include/ndds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDDS_DLL_VARIABLE;WIN32_LEAN_AND_MEAN;NDEBUG;NDDS_USER_DLL_EXPORT;;EPROSIMA_ALL_DYN_LINK;EPROSIMA_USER_DLL_EXPORT;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDDS_DLL_VARIABLE;WIN32_LEAN_AND_MEAN;NDEBUG;NDDS_USER_DLL_EXPORT;;MessageHeader_SOURCE;EPROSIMA_ALL_DYN_LINK;EPROSIMA_USER_DLL_EXPORT;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
         <PrecompiledHeader>NotUsing</PrecompiledHeader>
         <PrecompiledHeaderFile>
         </PrecompiledHeaderFile>
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscore.lib;nddsc.lib;nddscpp.lib;rpcdds-0.3.0.lib;
+        <AdditionalDependencies>nddscore.lib;nddsc.lib;nddscpp.lib;
   ;%(AdditionalDependencies)</AdditionalDependencies>
         <OutputFile>$(TargetDir)$(TargetName)$(TargetExt)</OutputFile>
         <AdditionalLibraryDirectories>$(RPCDDSHOME)/lib/x64Win64VS2010;$(NDDSHOME)/lib/x64Win64VS2010;.\lib\x64Win64VS2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -127,14 +139,14 @@
         <WarningLevel>Level3</WarningLevel>
         <Optimization>Disabled</Optimization>
         <AdditionalIncludeDirectories>$(RPCDDSHOME)/include;$(NDDSHOME)/include;$(NDDSHOME)/include/ndds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_DEBUG;;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_DEBUG;;MessageHeader_SOURCE;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
         <PrecompiledHeader>NotUsing</PrecompiledHeader>
         <PrecompiledHeaderFile>
         </PrecompiledHeaderFile>
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscorezd.lib;nddsczd.lib;nddscppzd.lib;librpcddsd-0.3.0.lib;
+        <AdditionalDependencies>nddscorezd.lib;nddsczd.lib;nddscppzd.lib;
   ;%(AdditionalDependencies)</AdditionalDependencies>
      
       </Link>
@@ -147,14 +159,14 @@
         <WarningLevel>Level3</WarningLevel>
         <Optimization>MaxSpeed</Optimization>
         <AdditionalIncludeDirectories>$(RPCDDSHOME)/include;$(NDDSHOME)/include;$(NDDSHOME)/include/ndds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDEBUG;;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;NDEBUG;;MessageHeader_SOURCE;RTI_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
         <PrecompiledHeader>NotUsing</PrecompiledHeader>
         <PrecompiledHeaderFile>
         </PrecompiledHeaderFile>
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscorez.lib;nddscz.lib;nddscppz.lib;librpcdds-0.3.0.lib;
+        <AdditionalDependencies>nddscorez.lib;nddscz.lib;nddscppz.lib;
   ;%(AdditionalDependencies)</AdditionalDependencies>
      
       </Link>

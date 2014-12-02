@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_foo_d_d_s_1_1_foo_reply__union.html" title="This class represents the union used in the DDS topic to encapsulate the operations..." alt="" coords="37,101,211,131"/>
-<area shape="rect" id="node4" href="$class_foo_d_d_s_1_1_foo___foo_procedure_reply.html" title="This class represents the structure Foo_FooProcedureReply that can be used to send/receive..." alt="" coords="5,5,229,35"/>
-<area shape="rect" id="node6" href="$classeprosima_1_1rpc_1_1protocol_1_1dds_1_1_reply_header.html" title="Header information used in all generated reply topics." alt="" coords="247,101,513,131"/>
-<area shape="rect" id="node8" href="$classeprosima_1_1rpc_1_1protocol_1_1dds_1_1_identification.html" title="This class is used to identify clients." alt="" coords="253,5,520,35"/>
-</map>

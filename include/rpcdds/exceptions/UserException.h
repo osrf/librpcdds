@@ -11,7 +11,7 @@
 
 #include "rpcdds/exceptions/Exception.h"
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace eprosima
 {

@@ -12,8 +12,6 @@
 #include "rpcdds/fastrpc_dll.h"
 #include "rpcdds/utils/Messages.h"
 
-#include <string>
-
 namespace eprosima
 {
     namespace rpc

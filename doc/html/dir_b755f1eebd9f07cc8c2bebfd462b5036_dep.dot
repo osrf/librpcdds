@@ -1,0 +1,13 @@
+digraph "includetmp/rpcdds/protocols" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_8faf118d15cf0d3dc00c97efc5e6d092 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="rpcdds" fontname="Helvetica", fontsize="10", URL="dir_8faf118d15cf0d3dc00c97efc5e6d092.html"]
+  subgraph clusterdir_b755f1eebd9f07cc8c2bebfd462b5036 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_b755f1eebd9f07cc8c2bebfd462b5036.html"];
+    dir_b755f1eebd9f07cc8c2bebfd462b5036 [shape=plaintext label="protocols"];
+    dir_45cca66590c54821a2884aa9a9957ae1 [shape=box label="dds" color="black" fillcolor="white" style="filled" URL="dir_45cca66590c54821a2884aa9a9957ae1.html"];
+  }
+  }
+}

@@ -1,0 +1,13 @@
+digraph "eprosima::rpc::strategy::ServerStrategy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="eprosima::rpc::strategy\l::ServerStrategy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="eprosima::rpc::strategy\l::SingleThreadStrategy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1strategy_1_1_single_thread_strategy.html",tooltip="This class implements the sigle thread strategy. The server uses a reception thread to execute all th..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="eprosima::rpc::strategy\l::ThreadPerRequestStrategy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1strategy_1_1_thread_per_request_strategy.html",tooltip="This class implements the thread per request strategy. The server creates a new thread for every new ..."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="eprosima::rpc::strategy\l::ThreadPoolStrategy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1strategy_1_1_thread_pool_strategy.html",tooltip="This class implements a thread pool strategy. The server schedules the incoming requests in a free th..."];
+}

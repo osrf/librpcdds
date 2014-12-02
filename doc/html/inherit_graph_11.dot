@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="eprosima::rpc::protocol\l::dds::UnknownOperationPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1protocol_1_1dds_1_1_unknown_operation_plugin.html"];
+}

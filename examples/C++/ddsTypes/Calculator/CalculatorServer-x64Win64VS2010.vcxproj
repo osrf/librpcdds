@@ -29,24 +29,36 @@
       <UseDebugLibraries>true</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="Configuration">
       <ConfigurationType>DynamicLibrary</ConfigurationType>
       <UseDebugLibraries>false</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
       <ConfigurationType>StaticLibrary</ConfigurationType>
       <UseDebugLibraries>true</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
       <ConfigurationType>StaticLibrary</ConfigurationType>
       <UseDebugLibraries>false</UseDebugLibraries>
       <UseOfMfc>false</UseOfMfc>
       <CharacterSet>MultiByte</CharacterSet>
+      <PlatformToolset>v100</PlatformToolset>
+
+
     </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -96,7 +108,7 @@
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscored.lib;nddscd.lib;nddscppd.lib;rpcddsd-0.3.0.lib;
+        <AdditionalDependencies>nddscored.lib;nddscd.lib;nddscppd.lib;
                                 MessageHeaderd.lib;Calculatord.lib;%(AdditionalDependencies)</AdditionalDependencies>
         <OutputFile>$(TargetDir)$(TargetName)$(TargetExt)</OutputFile>
         <AdditionalLibraryDirectories>$(RPCDDSHOME)/lib/x64Win64VS2010;$(NDDSHOME)/lib/x64Win64VS2010;.\lib\x64Win64VS2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -115,7 +127,7 @@
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscore.lib;nddsc.lib;nddscpp.lib;rpcdds-0.3.0.lib;
+        <AdditionalDependencies>nddscore.lib;nddsc.lib;nddscpp.lib;
                                 MessageHeader.lib;Calculator.lib;%(AdditionalDependencies)</AdditionalDependencies>
         <OutputFile>$(TargetDir)$(TargetName)$(TargetExt)</OutputFile>
         <AdditionalLibraryDirectories>$(RPCDDSHOME)/lib/x64Win64VS2010;$(NDDSHOME)/lib/x64Win64VS2010;.\lib\x64Win64VS2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -134,7 +146,7 @@
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscorezd.lib;nddsczd.lib;nddscppzd.lib;librpcddsd-0.3.0.lib;
+        <AdditionalDependencies>nddscorezd.lib;nddsczd.lib;nddscppzd.lib;
                                 libMessageHeaderd.lib;libCalculatord.lib;%(AdditionalDependencies)</AdditionalDependencies>
      
       </Link>
@@ -154,7 +166,7 @@
       </ClCompile>
       <Link>
         <GenerateDebugInformation>true</GenerateDebugInformation>
-        <AdditionalDependencies>nddscorez.lib;nddscz.lib;nddscppz.lib;librpcdds-0.3.0.lib;
+        <AdditionalDependencies>nddscorez.lib;nddscz.lib;nddscppz.lib;
                                 libMessageHeader.lib;libCalculator.lib;%(AdditionalDependencies)</AdditionalDependencies>
      
       </Link>

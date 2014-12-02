@@ -1,8 +1,8 @@
 /*************************************************************************
- * Copyright (c) 2012 eProsima. All rights reserved.
+ * Copyright (c) 2013 eProsima. All rights reserved.
  *
  * This generated file is licensed to you under the terms described in the
- * FASTRPC_LICENSE file included in this FASTRPC distribution.
+ * rpcdds_LICENSE file included in this rpcdds distribution.
  *
  *************************************************************************
  * 
@@ -20,15 +20,18 @@
 #include "fastcdr/exceptions/BadParamException.h"
 #include "fastcdr/exceptions/NotEnoughMemoryException.h"
 
+
+
+ 
 // Request operations
-DDS_TypeCode* CalculatorPlugin::additionRequestPlugin::get_typecode()
+DDS_TypeCode* CalculatorPlugin::addition_InPlugin::get_typecode()
 {
-    //printf("=> Calculator_additionRequestPlugin::get_typecode\n");
+    //printf("=> Calculator_addition_InPlugin::get_typecode\n");
     static bool is_initialized = false;
 
 
 
-    static DDS_TypeCode_Member Calculator_additionRequest_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_addition_In_g_tc_members[2] =
     {
                 {
                     (char *)"value1",
@@ -42,9 +45,9 @@ DDS_TypeCode* CalculatorPlugin::additionRequestPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 },
                 {
@@ -59,50 +62,51 @@ DDS_TypeCode* CalculatorPlugin::additionRequestPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode Calculator_additionRequest_g_tc =
+    static DDS_TypeCode Calculator_addition_In_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"Calculator_additionRequest",
+         (char*)"Calculator_addition_In",
          NULL,
          0,
          0,
          NULL,
          2,
-         Calculator_additionRequest_g_tc_members,
+         Calculator_addition_In_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        Calculator_additionRequest_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
-        Calculator_additionRequest_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_addition_In_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_addition_In_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+
         is_initialized = true;
     }
 
-    return &Calculator_additionRequest_g_tc;
+    return &Calculator_addition_In_g_tc;
 }
 
 // Reply operations
 
-DDS_TypeCode* CalculatorPlugin::additionReplyPlugin::get_typecode()
+
+DDS_TypeCode* CalculatorPlugin::addition_OutPlugin::get_typecode()
 {
-    //printf("=> CalculatorPlugin::additionReplyPlugin::get_typecode\n");
     static bool is_initialized = false;
 
 
-    static DDS_TypeCode_Member Calculator_additionReply_g_tc_members[1] =
+    static DDS_TypeCode_Member Calculator_addition_Out_g_tc_members[1] =
     {
                 {
-                    (char *)"addition_ret",
+                    (char *)"return_",
                     {
                         0,
                         DDS_BOOLEAN_FALSE,
@@ -113,47 +117,138 @@ DDS_TypeCode* CalculatorPlugin::additionReplyPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode Calculator_additionReply_g_tc =
+    static DDS_TypeCode Calculator_addition_Out_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"Calculator_additionReply",
+         (char*)"Calculator_addition_Out",
          NULL,
          0,
          0,
          NULL,
          1,
-         Calculator_additionReply_g_tc_members,
+         Calculator_addition_Out_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        Calculator_additionReply_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_addition_Out_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
 
         is_initialized = true;
     }
 
-    return &Calculator_additionReply_g_tc;
+    return &Calculator_addition_Out_g_tc;
+}
+
+DDS_TypeCode* CalculatorPlugin::addition_ResultPlugin::get_typecode()
+{
+    //printf("=> CalculatorPlugin::addition_ResultPlugin::get_typecode\n");
+    static bool is_initialized = false;
+
+    static DDS_TypeCode_Member Calculator_addition_Result_g_tc_members[0 + 3] =
+    {
+        {
+            (char *)"unknown_exception",/* Member name */
+            {
+                1,/* Representation ID */
+                DDS_BOOLEAN_FALSE,/* Is a pointer? */
+                -1, /* Bitfield bits */
+                NULL/* Member type code is assigned later */
+            },
+            0, /* Ignored */
+            1, /* Number of labels */
+            RTI_CDR_TYPE_CODE_UNION_DEFAULT_LABEL, /* First label */
+            NULL, /* Labels (it is NULL when there is only one label)*/
+            RTI_CDR_NONKEY_MEMBER, /* Member flags */
+            DDS_PRIVATE_MEMBER,/* Ignored */
+            1,
+            NULL/* Ignored */
+        }
+        ,
+        {
+            (char *)"out_",
+            {
+                0,
+                DDS_BOOLEAN_FALSE,
+                -1,
+                NULL
+            },
+            0,
+            1,
+            0,
+            NULL,
+            RTI_CDR_NONKEY_MEMBER,
+            DDS_PRIVATE_MEMBER,
+            1,
+            NULL
+        }
+        ,
+        {
+            (char *)"sysx_",
+            {
+                0,
+                DDS_BOOLEAN_FALSE,
+                -1,
+                NULL
+            },
+            0,
+            1,
+            1,
+            NULL,
+            RTI_CDR_NONKEY_MEMBER,
+            DDS_PRIVATE_MEMBER,
+            1,
+            NULL
+        }
+    };
+
+    static DDS_TypeCode Calculator_addition_Result_g_tc =
+    {{
+         DDS_TK_UNION,
+         DDS_BOOLEAN_FALSE,
+         -1,
+         (char*)"Calculator_addition_Result",
+         NULL,
+         0,
+         0,
+         NULL,
+         0 + 3,
+         Calculator_addition_Result_g_tc_members,
+         DDS_VM_NONE
+    }};
+    
+    if(!is_initialized)
+    {
+        Calculator_addition_Result_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::UnknownExceptionPlugin::get_typecode();
+        Calculator_addition_Result_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)CalculatorPlugin::addition_OutPlugin::get_typecode();
+        Calculator_addition_Result_g_tc_members[2]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::SystemExceptionCodePlugin::get_typecode();
+
+        Calculator_addition_Result_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+
+        is_initialized = true;
+    }
+
+    return &Calculator_addition_Result_g_tc;
 }
 
 // Request operations
-DDS_TypeCode* CalculatorPlugin::subtractionRequestPlugin::get_typecode()
+DDS_TypeCode* CalculatorPlugin::subtraction_InPlugin::get_typecode()
 {
-    //printf("=> Calculator_subtractionRequestPlugin::get_typecode\n");
+    //printf("=> Calculator_subtraction_InPlugin::get_typecode\n");
     static bool is_initialized = false;
 
 
 
-    static DDS_TypeCode_Member Calculator_subtractionRequest_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_subtraction_In_g_tc_members[2] =
     {
                 {
                     (char *)"value1",
@@ -167,9 +262,9 @@ DDS_TypeCode* CalculatorPlugin::subtractionRequestPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 },
                 {
@@ -184,50 +279,51 @@ DDS_TypeCode* CalculatorPlugin::subtractionRequestPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode Calculator_subtractionRequest_g_tc =
+    static DDS_TypeCode Calculator_subtraction_In_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"Calculator_subtractionRequest",
+         (char*)"Calculator_subtraction_In",
          NULL,
          0,
          0,
          NULL,
          2,
-         Calculator_subtractionRequest_g_tc_members,
+         Calculator_subtraction_In_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        Calculator_subtractionRequest_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
-        Calculator_subtractionRequest_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_subtraction_In_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_subtraction_In_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+
         is_initialized = true;
     }
 
-    return &Calculator_subtractionRequest_g_tc;
+    return &Calculator_subtraction_In_g_tc;
 }
 
 // Reply operations
 
-DDS_TypeCode* CalculatorPlugin::subtractionReplyPlugin::get_typecode()
+
+DDS_TypeCode* CalculatorPlugin::subtraction_OutPlugin::get_typecode()
 {
-    //printf("=> CalculatorPlugin::subtractionReplyPlugin::get_typecode\n");
     static bool is_initialized = false;
 
 
-    static DDS_TypeCode_Member Calculator_subtractionReply_g_tc_members[1] =
+    static DDS_TypeCode_Member Calculator_subtraction_Out_g_tc_members[1] =
     {
                 {
-                    (char *)"subtraction_ret",
+                    (char *)"return_",
                     {
                         0,
                         DDS_BOOLEAN_FALSE,
@@ -238,82 +334,173 @@ DDS_TypeCode* CalculatorPlugin::subtractionReplyPlugin::get_typecode()
                     0,
                     0,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_REQUIRED_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode Calculator_subtractionReply_g_tc =
+    static DDS_TypeCode Calculator_subtraction_Out_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"Calculator_subtractionReply",
+         (char*)"Calculator_subtraction_Out",
          NULL,
          0,
          0,
          NULL,
          1,
-         Calculator_subtractionReply_g_tc_members,
+         Calculator_subtraction_Out_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        Calculator_subtractionReply_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_subtraction_Out_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
 
         is_initialized = true;
     }
 
-    return &Calculator_subtractionReply_g_tc;
+    return &Calculator_subtraction_Out_g_tc;
+}
+
+DDS_TypeCode* CalculatorPlugin::subtraction_ResultPlugin::get_typecode()
+{
+    //printf("=> CalculatorPlugin::subtraction_ResultPlugin::get_typecode\n");
+    static bool is_initialized = false;
+
+    static DDS_TypeCode_Member Calculator_subtraction_Result_g_tc_members[0 + 3] =
+    {
+        {
+            (char *)"unknown_exception",/* Member name */
+            {
+                1,/* Representation ID */
+                DDS_BOOLEAN_FALSE,/* Is a pointer? */
+                -1, /* Bitfield bits */
+                NULL/* Member type code is assigned later */
+            },
+            0, /* Ignored */
+            1, /* Number of labels */
+            RTI_CDR_TYPE_CODE_UNION_DEFAULT_LABEL, /* First label */
+            NULL, /* Labels (it is NULL when there is only one label)*/
+            RTI_CDR_NONKEY_MEMBER, /* Member flags */
+            DDS_PRIVATE_MEMBER,/* Ignored */
+            1,
+            NULL/* Ignored */
+        }
+        ,
+        {
+            (char *)"out_",
+            {
+                0,
+                DDS_BOOLEAN_FALSE,
+                -1,
+                NULL
+            },
+            0,
+            1,
+            0,
+            NULL,
+            RTI_CDR_NONKEY_MEMBER,
+            DDS_PRIVATE_MEMBER,
+            1,
+            NULL
+        }
+        ,
+        {
+            (char *)"sysx_",
+            {
+                0,
+                DDS_BOOLEAN_FALSE,
+                -1,
+                NULL
+            },
+            0,
+            1,
+            1,
+            NULL,
+            RTI_CDR_NONKEY_MEMBER,
+            DDS_PRIVATE_MEMBER,
+            1,
+            NULL
+        }
+    };
+
+    static DDS_TypeCode Calculator_subtraction_Result_g_tc =
+    {{
+         DDS_TK_UNION,
+         DDS_BOOLEAN_FALSE,
+         -1,
+         (char*)"Calculator_subtraction_Result",
+         NULL,
+         0,
+         0,
+         NULL,
+         0 + 3,
+         Calculator_subtraction_Result_g_tc_members,
+         DDS_VM_NONE
+    }};
+    
+    if(!is_initialized)
+    {
+        Calculator_subtraction_Result_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::UnknownExceptionPlugin::get_typecode();
+        Calculator_subtraction_Result_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)CalculatorPlugin::subtraction_OutPlugin::get_typecode();
+        Calculator_subtraction_Result_g_tc_members[2]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::SystemExceptionCodePlugin::get_typecode();
+
+        Calculator_subtraction_Result_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+
+        is_initialized = true;
+    }
+
+    return &Calculator_subtraction_Result_g_tc;
 }
 
 
 // Request interface
-const char *CalculatorRequestPlugin::m_typename = "CalculatorRequest";
+const char *Calculator_RequestPlugin::m_typename = "Calculator_Request";
 
-const char* CalculatorRequestPlugin::get_typename()
+const char* Calculator_RequestPlugin::get_typename()
 {
-    //printf("=> CalculatorRequestPlugin::get_typename\n");
+    //printf("=> Calculator_RequestPlugin::get_typename\n");
     return m_typename;
 }
 
-CalculatorRequest*
-CalculatorRequestPlugin::create_data(void)
+Calculator_Request*
+Calculator_RequestPlugin::create_data(void)
 {
-    //printf("=> CalculatorRequestPlugin::create_data\n");
-    CalculatorRequest *request = new CalculatorRequest();
+    //printf("=> Calculator_RequestPlugin::create_data\n");
+    Calculator_Request *request = new Calculator_Request();
     return request;
 }
 
 void 
-CalculatorRequestPlugin::destroy_data(
-    CalculatorRequest *sample)
+Calculator_RequestPlugin::destroy_data(
+    Calculator_Request *sample)
 {
-    //printf("=> CalculatorRequestPlugin::destroy_data\n");
+    //printf("=> Calculator_RequestPlugin::destroy_data\n");
     if(sample != NULL)
         delete sample;
 }
 
 void 
-CalculatorRequestPlugin::copy_data(
-    CalculatorRequest *dst,
-    const CalculatorRequest *src)
+Calculator_RequestPlugin::copy_data(
+    Calculator_Request *dst,
+    const Calculator_Request *src)
 {
-    //printf("=> CalculatorRequestPlugin::copy_data\n");
+    //printf("=> Calculator_RequestPlugin::copy_data\n");
     *dst = *src;
 }
 
 unsigned int 
-CalculatorRequestPlugin::get_serialized_sample_max_size(
+Calculator_RequestPlugin::get_serialized_sample_max_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment)
 {
-    //printf("=> CalculatorRequestPlugin::get_serialized_sample_max_size\n");
+    //printf("=> Calculator_RequestPlugin::get_serialized_sample_max_size\n");
     unsigned int initial_alignment = current_alignment;
 
     unsigned int encapsulation_size = current_alignment;
@@ -331,7 +518,7 @@ CalculatorRequestPlugin::get_serialized_sample_max_size(
 
     }
 
-    current_alignment += CalculatorRequest::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += (unsigned int)Calculator_Request::getMaxCdrSerializedSize(current_alignment);
 
     if (include_encapsulation) {
         current_alignment += encapsulation_size;
@@ -342,14 +529,14 @@ CalculatorRequestPlugin::get_serialized_sample_max_size(
 }
 
 unsigned int
-CalculatorRequestPlugin::get_serialized_sample_size(
+Calculator_RequestPlugin::get_serialized_sample_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment,
-    const CalculatorRequest * sample)
+    const Calculator_Request * sample)
 {
-    //printf("=> CalculatorRequestPlugin::get_serialized_sample_size\n");
+    //printf("=> Calculator_RequestPlugin::get_serialized_sample_size\n");
     /* TODO
     unsigned int initial_alignment = current_alignment;
 
@@ -389,49 +576,49 @@ CalculatorRequestPlugin::get_serialized_sample_size(
     return current_alignment - initial_alignment;
     */
 
-    return sample->getSerializedSize(current_alignment);
+    return (unsigned int)sample->getSerializedSize(current_alignment);
 }
 
 unsigned int 
-CalculatorRequestPlugin::get_serialized_sample_min_size(
+Calculator_RequestPlugin::get_serialized_sample_min_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment)
 {
-    //printf("=> CalculatorRequestPlugin::get_serialized_sample_min_size\n");
+    //printf("=> Calculator_RequestPlugin::get_serialized_sample_min_size\n");
     // TODO
     return 0;
 }
 
 PRESTypePluginParticipantData 
-CalculatorRequestPlugin::on_participant_attached(
+Calculator_RequestPlugin::on_participant_attached(
     void *registration_data, 
     const struct PRESTypePluginParticipantInfo *participant_info,
     RTIBool top_level_registration, 
     void *container_plugin_context,
     RTICdrTypeCode *typeCode)
 {
-    //printf("=> CalculatorRequestPlugin::on_participant_attached\n");
+    //printf("=> Calculator_RequestPlugin::on_participant_attached\n");
     return PRESTypePluginDefaultParticipantData_new(participant_info);
 }
 
 void
-CalculatorRequestPlugin::on_participant_detached(
+Calculator_RequestPlugin::on_participant_detached(
     PRESTypePluginParticipantData participant_data)
 {
-    //printf("=> CalculatorRequestPlugin::on_participant_detached\n");
+    //printf("=> Calculator_RequestPlugin::on_participant_detached\n");
     PRESTypePluginDefaultParticipantData_delete(participant_data);
 }
 
 PRESTypePluginEndpointData 
-CalculatorRequestPlugin::on_endpoint_attached(
+Calculator_RequestPlugin::on_endpoint_attached(
     PRESTypePluginParticipantData participant_data,
     const struct PRESTypePluginEndpointInfo *endpoint_info,
     RTIBool top_level_registration, 
     void *container_plugin_context)
 {
-    //printf("=> CalculatorRequestPlugin::on_endpoint_attached\n");
+    //printf("=> Calculator_RequestPlugin::on_endpoint_attached\n");
     PRESTypePluginEndpointData epd = NULL;
     unsigned int serializedSampleMaxSize;
 
@@ -439,16 +626,16 @@ CalculatorRequestPlugin::on_endpoint_attached(
             participant_data,
             endpoint_info,
             (PRESTypePluginDefaultEndpointDataCreateSampleFunction)
-            CalculatorRequestPlugin::create_data,
+            Calculator_RequestPlugin::create_data,
             (PRESTypePluginDefaultEndpointDataDestroySampleFunction)
-            CalculatorRequestPlugin::destroy_data,
+            Calculator_RequestPlugin::destroy_data,
             NULL, NULL);
 
     if(epd != NULL)
     {
         if(endpoint_info->endpointKind == PRES_TYPEPLUGIN_ENDPOINT_WRITER)
         {
-            serializedSampleMaxSize = CalculatorRequestPlugin::get_serialized_sample_max_size(
+            serializedSampleMaxSize = Calculator_RequestPlugin::get_serialized_sample_max_size(
                     epd, RTI_FALSE, RTI_CDR_ENCAPSULATION_ID_CDR_BE, 0);
 
             PRESTypePluginDefaultEndpointData_setMaxSizeSerializedSample(epd, serializedSampleMaxSize);
@@ -457,9 +644,9 @@ CalculatorRequestPlugin::on_endpoint_attached(
                         epd,
                         endpoint_info,
                         (PRESTypePluginGetSerializedSampleMaxSizeFunction)
-                        CalculatorRequestPlugin::get_serialized_sample_max_size, epd,
+                        Calculator_RequestPlugin::get_serialized_sample_max_size, epd,
                         (PRESTypePluginGetSerializedSampleSizeFunction)
-                        CalculatorRequestPlugin::get_serialized_sample_size,
+                        Calculator_RequestPlugin::get_serialized_sample_size,
                         epd) == RTI_FALSE)
             {
                 PRESTypePluginDefaultEndpointData_delete(epd);
@@ -472,37 +659,37 @@ CalculatorRequestPlugin::on_endpoint_attached(
 }
 
 void 
-CalculatorRequestPlugin::on_endpoint_detached(
+Calculator_RequestPlugin::on_endpoint_detached(
     PRESTypePluginEndpointData endpoint_data)
 {  
-    //printf("=> CalculatorRequestPlugin::on_endpoint_detached\n");
+    //printf("=> Calculator_RequestPlugin::on_endpoint_detached\n");
     PRESTypePluginDefaultEndpointData_delete(endpoint_data);
 }
 
 RTIBool 
-CalculatorRequestPlugin::copy_sample(
+Calculator_RequestPlugin::copy_sample(
     PRESTypePluginEndpointData endpoint_data,
-    CalculatorRequest *dst,
-    const CalculatorRequest *src)
+    Calculator_Request *dst,
+    const Calculator_Request *src)
 {
-    //printf("=> CalculatorRequestPlugin::copy_sample\n");
+    //printf("=> Calculator_RequestPlugin::copy_sample\n");
     // TODO exception?
     *dst = *src;
-    CalculatorRequestPlugin::copy_data(dst, src);
+    Calculator_RequestPlugin::copy_data(dst, src);
     return RTI_TRUE;
 }
 
 RTIBool 
-CalculatorRequestPlugin::serialize(
+Calculator_RequestPlugin::serialize(
     PRESTypePluginEndpointData endpoint_data,
-    const CalculatorRequest *sample, 
+    const Calculator_Request *sample, 
     struct RTICdrStream *stream,    
     RTIBool serialize_encapsulation,
     RTIEncapsulationId encapsulation_id,
     RTIBool serialize_sample, 
     void *endpoint_plugin_qos)
 {
-    //printf("=> CalculatorRequestPlugin::serialize\n");
+    //printf("=> Calculator_RequestPlugin::serialize\n");
     eprosima::fastcdr::FastBuffer buffer(stream->_buffer, stream->_bufferLength);
     eprosima::fastcdr::Cdr scdr(buffer, (eprosima::fastcdr::Cdr::Endianness)stream->_endian, eprosima::fastcdr::Cdr::DDS_CDR);
     scdr.moveAlignmentForward(stream->_relativeBuffer - stream->_buffer);
@@ -544,17 +731,17 @@ CalculatorRequestPlugin::serialize(
 }
 
 RTIBool 
-CalculatorRequestPlugin::deserialize(
+Calculator_RequestPlugin::deserialize(
     PRESTypePluginEndpointData endpoint_data,
-    CalculatorRequest **sample,
+    Calculator_Request **sample,
     RTIBool * drop_sample,
     struct RTICdrStream *stream,   
     RTIBool deserialize_encapsulation,
     RTIBool deserialize_sample, 
     void *endpoint_plugin_qos)
 {
-    //printf("=> CalculatorRequestPlugin::deserialize\n");
-    CalculatorRequest *_sample = *sample;
+    //printf("=> Calculator_RequestPlugin::deserialize\n");
+    Calculator_Request *_sample = *sample;
     eprosima::fastcdr::FastBuffer buffer(stream->_buffer, stream->_bufferLength);
     eprosima::fastcdr::Cdr dcdr(buffer, (eprosima::fastcdr::Cdr::Endianness)stream->_endian, eprosima::fastcdr::Cdr::DDS_CDR);
     dcdr.moveAlignmentForward(stream->_relativeBuffer - stream->_buffer);
@@ -577,18 +764,36 @@ CalculatorRequestPlugin::deserialize(
 }
 
 PRESTypePluginKeyKind 
-CalculatorRequestPlugin::get_key_kind(void)
+Calculator_RequestPlugin::get_key_kind(void)
 {
-    //printf("=> CalculatorRequestPlugin::get_key_kind\n");
+    //printf("=> Calculator_RequestPlugin::get_key_kind\n");
     return PRES_TYPEPLUGIN_NO_KEY;
 }
 
-DDS_TypeCode* CalculatorRequest_unionPlugin::get_typecode()
+DDS_TypeCode* Calculator_CallPlugin::get_typecode()
 {
     static bool is_initialized = false;
 
-    static DDS_TypeCode_Member CalculatorRequest_union_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_Call_g_tc_members[2 + 1] =
     {
+        {
+            (char *)"unknown_operation",/* Member name */
+            {
+                1,/* Representation ID */
+                DDS_BOOLEAN_FALSE,/* Is a pointer? */
+                -1, /* Bitfield bits */
+                NULL/* Member type code is assigned later */
+            },
+            0, /* Ignored */
+            1, /* Number of labels */
+            RTI_CDR_TYPE_CODE_UNION_DEFAULT_LABEL, /* First label */
+            NULL, /* Labels (it is NULL when there is only one label)*/
+            RTI_CDR_NONKEY_MEMBER, /* Member flags */
+            DDS_PRIVATE_MEMBER,/* Ignored */
+            1,
+            NULL/* Ignored */
+        }
+                ,
                 {
                     (char *)"addition",
                     {
@@ -599,13 +804,14 @@ DDS_TypeCode* CalculatorRequest_unionPlugin::get_typecode()
                     },
                     0,
                     1,
-                    1,
+                    (RTICdrLong)0xCBC6CEAA,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_NONKEY_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
-                },
+                }
+                ,
                 {
                     (char *)"subtraction",
                     {
@@ -616,53 +822,55 @@ DDS_TypeCode* CalculatorRequest_unionPlugin::get_typecode()
                     },
                     0,
                     1,
-                    2,
+                    (RTICdrLong)0xCA019A14,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_NONKEY_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode CalculatorRequest_union_g_tc =
+    static DDS_TypeCode Calculator_Call_g_tc =
     {{
          DDS_TK_UNION,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"CalculatorRequest_union",
+         (char*)"Calculator_Call",
          NULL,
          0,
          0,
          NULL,
-         2,
-         CalculatorRequest_union_g_tc_members,
+         2 + 1,
+         Calculator_Call_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        CalculatorRequest_union_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::additionRequestPlugin::get_typecode();
-        CalculatorRequest_union_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::subtractionRequestPlugin::get_typecode();
 
-        CalculatorRequest_union_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_Call_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::UnknownOperationPlugin::get_typecode();
+        Calculator_Call_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::addition_InPlugin::get_typecode();
+        Calculator_Call_g_tc_members[2]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::subtraction_InPlugin::get_typecode();
+
+        Calculator_Call_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
 
         is_initialized = true;
     }
 
-    return &CalculatorRequest_union_g_tc;
+    return &Calculator_Call_g_tc;
 }
 
-DDS_TypeCode* CalculatorRequestPlugin::get_typecode()
+DDS_TypeCode* Calculator_RequestPlugin::get_typecode()
 {
-    //printf("=> CalculatorRequestPlugin::get_typecode\n");
+    //printf("=> Calculator_RequestPlugin::get_typecode\n");
     static bool is_initialized = false;
 
-    static DDS_TypeCode_Member CalculatorRequest_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_Request_g_tc_members[2] =
     {
         // TODO Add header.
         {
-            (char *)"_header",
+            (char *)"header",
             {
                 0,
                 DDS_BOOLEAN_FALSE,
@@ -673,13 +881,13 @@ DDS_TypeCode* CalculatorRequestPlugin::get_typecode()
             0,
             0,
             NULL,
-            DDS_BOOLEAN_FALSE,
+            RTI_CDR_REQUIRED_MEMBER,
             DDS_PRIVATE_MEMBER,
-            0,
+            1,
             NULL
         },
         {
-            (char *)"unio",
+            (char *)"request",
             {
                 0,
                 DDS_BOOLEAN_FALSE,
@@ -690,14 +898,14 @@ DDS_TypeCode* CalculatorRequestPlugin::get_typecode()
             0,
             0,
             NULL,
-            DDS_BOOLEAN_FALSE,
+            RTI_CDR_REQUIRED_MEMBER,
             DDS_PRIVATE_MEMBER,
-            0,
+            1,
             NULL
         }
     };
 
-    static DDS_TypeCode CalculatorRequest_g_tc =
+    static DDS_TypeCode Calculator_Request_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
@@ -708,23 +916,23 @@ DDS_TypeCode* CalculatorRequestPlugin::get_typecode()
          0,
          NULL,
          2,
-         CalculatorRequest_g_tc_members,
+         Calculator_Request_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        CalculatorRequest_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::RequestHeaderPlugin::get_typecode();
-        CalculatorRequest_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)CalculatorRequest_unionPlugin::get_typecode();
+        Calculator_Request_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::RequestHeaderPlugin::get_typecode();
+        Calculator_Request_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)Calculator_CallPlugin::get_typecode();
         is_initialized = true;
     }
 
-    return &CalculatorRequest_g_tc;
+    return &Calculator_Request_g_tc;
 }
 
-struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
+struct PRESTypePlugin *Calculator_RequestPlugin::new_plugin(void)
 {
-    //printf("=> CalculatorRequestPlugin::new_plugin\n");
+    //printf("=> Calculator_RequestPlugin::new_plugin\n");
     struct PRESTypePlugin *plugin = NULL;
     const struct PRESTypePluginVersion PLUGIN_VERSION = PRES_TYPE_PLUGIN_VERSION_2_0;
 
@@ -737,20 +945,20 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
         /* set up parent's function pointers */
         plugin->onParticipantAttached =
             (PRESTypePluginOnParticipantAttachedCallback)
-            CalculatorRequestPlugin::on_participant_attached;
+            Calculator_RequestPlugin::on_participant_attached;
         plugin->onParticipantDetached =
             (PRESTypePluginOnParticipantDetachedCallback)
-            CalculatorRequestPlugin::on_participant_detached;
+            Calculator_RequestPlugin::on_participant_detached;
         plugin->onEndpointAttached =
             (PRESTypePluginOnEndpointAttachedCallback)
-            CalculatorRequestPlugin::on_endpoint_attached;
+            Calculator_RequestPlugin::on_endpoint_attached;
         plugin->onEndpointDetached =
             (PRESTypePluginOnEndpointDetachedCallback)
-            CalculatorRequestPlugin::on_endpoint_detached;
+            Calculator_RequestPlugin::on_endpoint_detached;
 
         plugin->copySampleFnc =
             (PRESTypePluginCopySampleFunction)
-            CalculatorRequestPlugin::copy_sample;
+            Calculator_RequestPlugin::copy_sample;
         plugin->createSampleFnc =
             (PRESTypePluginCreateSampleFunction)
             PRESTypePluginDefaultEndpointData_createSample;
@@ -760,16 +968,16 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
 
         plugin->serializeFnc =
             (PRESTypePluginSerializeFunction)
-            CalculatorRequestPlugin::serialize;
+            Calculator_RequestPlugin::serialize;
         plugin->deserializeFnc =
             (PRESTypePluginDeserializeFunction)
-            CalculatorRequestPlugin::deserialize;
+            Calculator_RequestPlugin::deserialize;
         plugin->getSerializedSampleMaxSizeFnc =
             (PRESTypePluginGetSerializedSampleMaxSizeFunction)
-            CalculatorRequestPlugin::get_serialized_sample_max_size;
+            Calculator_RequestPlugin::get_serialized_sample_max_size;
         plugin->getSerializedSampleMinSizeFnc =
             (PRESTypePluginGetSerializedSampleMinSizeFunction)
-            CalculatorRequestPlugin::get_serialized_sample_min_size;
+            Calculator_RequestPlugin::get_serialized_sample_min_size;
 
 
         plugin->getSampleFnc =
@@ -782,7 +990,7 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
 
         plugin->getKeyKindFnc =
             (PRESTypePluginGetKeyKindFunction)
-            CalculatorRequestPlugin::get_key_kind;
+            Calculator_RequestPlugin::get_key_kind;
 
 
         /* These functions are only used for keyed types. As this is not a keyed
@@ -799,7 +1007,7 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
         plugin->serializedSampleToKeyHashFnc = NULL;
         plugin->serializedKeyToKeyHashFnc = NULL;
 
-        plugin->typeCode =  (struct RTICdrTypeCode *)CalculatorRequestPlugin::get_typecode();
+        plugin->typeCode =  (struct RTICdrTypeCode *)Calculator_RequestPlugin::get_typecode();
 
         plugin->languageKind = PRES_TYPEPLUGIN_DDS_TYPE; 
 
@@ -812,7 +1020,7 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
             PRESTypePluginDefaultEndpointData_returnBuffer;
         plugin->getSerializedSampleSizeFnc =
             (PRESTypePluginGetSerializedSampleSizeFunction)
-            CalculatorRequestPlugin::get_serialized_sample_size;
+            Calculator_RequestPlugin::get_serialized_sample_size;
 
         plugin->endpointTypeName = m_typename;
 
@@ -823,28 +1031,28 @@ struct PRESTypePlugin *CalculatorRequestPlugin::new_plugin(void)
 }
 
 void
-CalculatorRequestPlugin::delete_plugin(struct PRESTypePlugin *plugin)
+Calculator_RequestPlugin::delete_plugin(struct PRESTypePlugin *plugin)
 {
-    //printf("=> CalculatorRequestPlugin::delete_plugin\n");
+    //printf("=> Calculator_RequestPlugin::delete_plugin\n");
     RTIOsapiHeap_freeStructure(plugin);
 }
 
-bool CalculatorRequestPlugin::register_type(DDSDomainParticipant *participant, const char *type_name)
+bool Calculator_RequestPlugin::register_type(DDSDomainParticipant *participant, const char *type_name)
 {
-    //printf("=> CalculatorRequestPlugin::register_type\n");
+    //printf("=> Calculator_RequestPlugin::register_type\n");
     bool returnedValue = false;
     struct PRESTypePlugin *typeDDSPlugin = NULL;
     static DDSTypeSupport *typePlugin = NULL;
 
     if(participant != NULL)
     {
-        typeDDSPlugin = CalculatorRequestPlugin::new_plugin();
+        typeDDSPlugin = Calculator_RequestPlugin::new_plugin();
 
         if(typeDDSPlugin != NULL)
         {
             if(typePlugin == NULL)
             {
-                typePlugin = new CalculatorRequestPlugin();
+                typePlugin = new Calculator_RequestPlugin();
             }
 
             typeDDSPlugin->_userBuffer = (PRESWord*)typePlugin;
@@ -852,78 +1060,78 @@ bool CalculatorRequestPlugin::register_type(DDSDomainParticipant *participant, c
             if(DDS_DomainParticipant_register_type(participant->get_c_domain_participantI(), type_name, typeDDSPlugin, NULL) == DDS_RETCODE_OK)
                 returnedValue = true;
 
-            CalculatorRequestPlugin::delete_plugin(typeDDSPlugin);
+            Calculator_RequestPlugin::delete_plugin(typeDDSPlugin);
         }
     }
 
     return returnedValue;
 }
 
-DDSDataReader* CalculatorRequestPlugin::create_datareaderI(DDSDataReader* dataReader)
+DDSDataReader* Calculator_RequestPlugin::create_datareaderI(DDSDataReader* dataReader)
 {
-    return new CalculatorRequestDataReader(dataReader);
+    return new Calculator_RequestDataReader(dataReader);
 }
 
-DDS_ReturnCode_t CalculatorRequestPlugin::destroy_datareaderI(DDSDataReader* dataReader)
+DDS_ReturnCode_t Calculator_RequestPlugin::destroy_datareaderI(DDSDataReader* dataReader)
 {
-    delete (CalculatorRequestDataReader*)dataReader;
+    delete (Calculator_RequestDataReader*)dataReader;
     return DDS_RETCODE_OK;
 }
 
-DDSDataWriter* CalculatorRequestPlugin::create_datawriterI(DDSDataWriter* dataWriter)
+DDSDataWriter* Calculator_RequestPlugin::create_datawriterI(DDSDataWriter* dataWriter)
 {
-    return new CalculatorRequestDataWriter(dataWriter);
+    return new Calculator_RequestDataWriter(dataWriter);
 }
 
-DDS_ReturnCode_t CalculatorRequestPlugin::destroy_datawriterI(DDSDataWriter* dataWriter)
+DDS_ReturnCode_t Calculator_RequestPlugin::destroy_datawriterI(DDSDataWriter* dataWriter)
 {
-    delete (CalculatorRequestDataWriter*)dataWriter;
+    delete (Calculator_RequestDataWriter*)dataWriter;
     return DDS_RETCODE_OK;
 }
 
 // Reply interfaces
-const char *CalculatorReplyPlugin::m_typename = "CalculatorReply";
+const char *Calculator_ReplyPlugin::m_typename = "Calculator_Reply";
 
-const char* CalculatorReplyPlugin::get_typename()
+const char* Calculator_ReplyPlugin::get_typename()
 {
-    //printf("=> CalculatorReplyPlugin::get_typename\n");
+    //printf("=> Calculator_ReplyPlugin::get_typename\n");
     return m_typename;
 }
 
 void 
-CalculatorReplyPlugin::copy_data(
-    CalculatorReply *dst,
-    const CalculatorReply *src)
+Calculator_ReplyPlugin::copy_data(
+    Calculator_Reply *dst,
+    const Calculator_Reply *src)
 {
-    //printf("=> CalculatorReplyPlugin::copy_data\n");
+    //printf("=> Calculator_ReplyPlugin::copy_data\n");
     *dst = *src;
 }
 
-CalculatorReply*
-CalculatorReplyPlugin::create_data(void)
+Calculator_Reply*
+Calculator_ReplyPlugin::create_data(void)
 {
-    //printf("=> CalculatorReplyPlugin::create_data\n");
-    CalculatorReply *reply = new CalculatorReply();
+    //printf("=> Calculator_ReplyPlugin::create_data\n");
+    Calculator_Reply *reply = new Calculator_Reply();
     return reply;
 }
 
 void 
-CalculatorReplyPlugin::destroy_data(
-    CalculatorReply *sample)
+Calculator_ReplyPlugin::destroy_data(
+    Calculator_Reply *sample)
 {
-    //printf("=> CalculatorReplyPlugin::destroy_data\n");
+    //printf("=> Calculator_ReplyPlugin::destroy_data\n");
     if(sample != NULL)
         delete sample;
 }
 
 unsigned int 
-CalculatorReplyPlugin::get_serialized_sample_max_size(
+Calculator_ReplyPlugin::get_serialized_sample_max_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment)
 {
-    //printf("=> CalculatorReplyPlugin::get_serialized_sample_max_size\n");
+    //printf("=> Calculator_ReplyPlugin::get_serialized_sample_max_size\n");
     unsigned int initial_alignment = current_alignment;
 
     unsigned int encapsulation_size = current_alignment;
@@ -942,7 +1150,7 @@ CalculatorReplyPlugin::get_serialized_sample_max_size(
     }
 
 
-    current_alignment += CalculatorReply::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += (unsigned int)Calculator_Reply::getMaxCdrSerializedSize(current_alignment);
 
     if (include_encapsulation) {
         current_alignment += encapsulation_size;
@@ -953,14 +1161,14 @@ CalculatorReplyPlugin::get_serialized_sample_max_size(
 }
 
 unsigned int
-CalculatorReplyPlugin::get_serialized_sample_size(
+Calculator_ReplyPlugin::get_serialized_sample_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment,
-    const CalculatorReply * sample)
+    const Calculator_Reply * sample)
 {
-    //printf("=> CalculatorReplyPlugin::get_serialized_sample_size\n");
+    //printf("=> Calculator_ReplyPlugin::get_serialized_sample_size\n");
     /* TODO
     unsigned int initial_alignment = current_alignment;
 
@@ -1000,49 +1208,49 @@ CalculatorReplyPlugin::get_serialized_sample_size(
     return current_alignment - initial_alignment;
     */
 
-    return sample->getSerializedSize(current_alignment);
+    return (unsigned int)sample->getSerializedSize(current_alignment);
 }
 
 unsigned int 
-CalculatorReplyPlugin::get_serialized_sample_min_size(
+Calculator_ReplyPlugin::get_serialized_sample_min_size(
     PRESTypePluginEndpointData endpoint_data,
     RTIBool include_encapsulation,
     RTIEncapsulationId encapsulation_id,
     unsigned int current_alignment)
 {
-    //printf("=> CalculatorReplyPlugin::get_serialized_sample_min_size\n");
+    //printf("=> Calculator_ReplyPlugin::get_serialized_sample_min_size\n");
     // TODO
     return 0;
 }
 
 PRESTypePluginParticipantData 
-CalculatorReplyPlugin::on_participant_attached(
+Calculator_ReplyPlugin::on_participant_attached(
     void *registration_data, 
     const struct PRESTypePluginParticipantInfo *participant_info,
     RTIBool top_level_registration, 
     void *container_plugin_context,
     RTICdrTypeCode *typeCode)
 {
-    //printf("=> CalculatorReplyPlugin::on_participant_attached\n");
+    //printf("=> Calculator_ReplyPlugin::on_participant_attached\n");
     return PRESTypePluginDefaultParticipantData_new(participant_info);
 }
 
 void
-CalculatorReplyPlugin::on_participant_detached(
+Calculator_ReplyPlugin::on_participant_detached(
     PRESTypePluginParticipantData participant_data)
 {
-    //printf("=> CalculatorReplyPlugin::on_participant_detached\n");
+    //printf("=> Calculator_ReplyPlugin::on_participant_detached\n");
     PRESTypePluginDefaultParticipantData_delete(participant_data);
 }
 
 PRESTypePluginEndpointData 
-CalculatorReplyPlugin::on_endpoint_attached(
+Calculator_ReplyPlugin::on_endpoint_attached(
     PRESTypePluginParticipantData participant_data,
     const struct PRESTypePluginEndpointInfo *endpoint_info,
     RTIBool top_level_registration, 
     void *container_plugin_context)
 {
-    //printf("=> CalculatorReplyPlugin::on_endpoint_attached\n");
+    //printf("=> Calculator_ReplyPlugin::on_endpoint_attached\n");
     PRESTypePluginEndpointData epd = NULL;
     unsigned int serializedSampleMaxSize;
 
@@ -1050,16 +1258,16 @@ CalculatorReplyPlugin::on_endpoint_attached(
             participant_data,
             endpoint_info,
             (PRESTypePluginDefaultEndpointDataCreateSampleFunction)
-            CalculatorReplyPlugin::create_data,
+            Calculator_ReplyPlugin::create_data,
             (PRESTypePluginDefaultEndpointDataDestroySampleFunction)
-            CalculatorReplyPlugin::destroy_data,
+            Calculator_ReplyPlugin::destroy_data,
             NULL, NULL);
 
     if(epd != NULL)
     {
         if(endpoint_info->endpointKind == PRES_TYPEPLUGIN_ENDPOINT_WRITER)
         {
-            serializedSampleMaxSize = CalculatorReplyPlugin::get_serialized_sample_max_size(
+            serializedSampleMaxSize = Calculator_ReplyPlugin::get_serialized_sample_max_size(
                     epd, RTI_FALSE, RTI_CDR_ENCAPSULATION_ID_CDR_BE, 0);
 
             PRESTypePluginDefaultEndpointData_setMaxSizeSerializedSample(epd, serializedSampleMaxSize);
@@ -1068,9 +1276,9 @@ CalculatorReplyPlugin::on_endpoint_attached(
                         epd,
                         endpoint_info,
                         (PRESTypePluginGetSerializedSampleMaxSizeFunction)
-                        CalculatorReplyPlugin::get_serialized_sample_max_size, epd,
+                        Calculator_ReplyPlugin::get_serialized_sample_max_size, epd,
                         (PRESTypePluginGetSerializedSampleSizeFunction)
-                        CalculatorReplyPlugin::get_serialized_sample_size,
+                        Calculator_ReplyPlugin::get_serialized_sample_size,
                         epd) == RTI_FALSE)
             {
                 PRESTypePluginDefaultEndpointData_delete(epd);
@@ -1083,35 +1291,35 @@ CalculatorReplyPlugin::on_endpoint_attached(
 }
 
 void 
-CalculatorReplyPlugin::on_endpoint_detached(
+Calculator_ReplyPlugin::on_endpoint_detached(
     PRESTypePluginEndpointData endpoint_data)
 {  
-    //printf("=> CalculatorReplyPlugin::on_endpoint_detached\n");
+    //printf("=> Calculator_ReplyPlugin::on_endpoint_detached\n");
     PRESTypePluginDefaultEndpointData_delete(endpoint_data);
 }
 
 RTIBool 
-CalculatorReplyPlugin::copy_sample(
+Calculator_ReplyPlugin::copy_sample(
     PRESTypePluginEndpointData endpoint_data,
-    CalculatorReply *dst,
-    const CalculatorReply *src)
+    Calculator_Reply *dst,
+    const Calculator_Reply *src)
 {
-    //printf("=> CalculatorReplyPlugin::copy_sample\n");
-    CalculatorReplyPlugin::copy_data(dst, src);
+    //printf("=> Calculator_ReplyPlugin::copy_sample\n");
+    Calculator_ReplyPlugin::copy_data(dst, src);
     return RTI_TRUE;
 }
 
 RTIBool 
-CalculatorReplyPlugin::serialize(
+Calculator_ReplyPlugin::serialize(
     PRESTypePluginEndpointData endpoint_data,
-    const CalculatorReply *sample, 
+    const Calculator_Reply *sample, 
     struct RTICdrStream *stream,    
     RTIBool serialize_encapsulation,
     RTIEncapsulationId encapsulation_id,
     RTIBool serialize_sample, 
     void *endpoint_plugin_qos)
 {
-    //printf("=> CalculatorReplyPlugin::serialize\n");
+    //printf("=> Calculator_ReplyPlugin::serialize\n");
     eprosima::fastcdr::FastBuffer buffer(stream->_buffer, stream->_bufferLength);
     eprosima::fastcdr::Cdr scdr(buffer, (eprosima::fastcdr::Cdr::Endianness)stream->_endian, eprosima::fastcdr::Cdr::DDS_CDR);
     scdr.moveAlignmentForward(stream->_relativeBuffer - stream->_buffer);
@@ -1152,17 +1360,17 @@ CalculatorReplyPlugin::serialize(
 }
 
 RTIBool 
-CalculatorReplyPlugin::deserialize(
+Calculator_ReplyPlugin::deserialize(
     PRESTypePluginEndpointData endpoint_data,
-    CalculatorReply **sample,
+    Calculator_Reply **sample,
     RTIBool * drop_sample,
     struct RTICdrStream *stream,   
     RTIBool deserialize_encapsulation,
     RTIBool deserialize_sample, 
     void *endpoint_plugin_qos)
 {
-    //printf("=> CalculatorReplyPlugin::deserialize\n");
-    CalculatorReply *_sample = *sample;
+    //printf("=> Calculator_ReplyPlugin::deserialize\n");
+    Calculator_Reply *_sample = *sample;
     eprosima::fastcdr::FastBuffer buffer(stream->_buffer, stream->_bufferLength);
     eprosima::fastcdr::Cdr dcdr(buffer, (eprosima::fastcdr::Cdr::Endianness)stream->_endian, eprosima::fastcdr::Cdr::DDS_CDR);
     dcdr.moveAlignmentForward(stream->_relativeBuffer - stream->_buffer);
@@ -1184,18 +1392,36 @@ CalculatorReplyPlugin::deserialize(
 }
 
 PRESTypePluginKeyKind 
-CalculatorReplyPlugin::get_key_kind(void)
+Calculator_ReplyPlugin::get_key_kind(void)
 {
-    //printf("=> CalculatorReplyPlugin::get_key_kind\n");
+    //printf("=> Calculator_ReplyPlugin::get_key_kind\n");
     return PRES_TYPEPLUGIN_NO_KEY;
 }
 
-DDS_TypeCode* CalculatorReply_unionPlugin::get_typecode()
+DDS_TypeCode* Calculator_ReturnPlugin::get_typecode()
 {
     static bool is_initialized = false;
 
-    static DDS_TypeCode_Member CalculatorReply_union_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_Return_g_tc_members[2 + 1] =
     {
+        {
+            (char *)"unknown_operation",/* Member name */
+            {
+                1,/* Representation ID */
+                DDS_BOOLEAN_FALSE,/* Is a pointer? */
+                -1, /* Bitfield bits */
+                NULL/* Member type code is assigned later */
+            },
+            0, /* Ignored */
+            1, /* Number of labels */
+            RTI_CDR_TYPE_CODE_UNION_DEFAULT_LABEL, /* First label */
+            NULL, /* Labels (it is NULL when there is only one label)*/
+            RTI_CDR_NONKEY_MEMBER, /* Member flags */
+            DDS_PRIVATE_MEMBER,/* Ignored */
+            1,
+            NULL/* Ignored */
+        }
+                ,
                 {
                     (char *)"addition",
                     {
@@ -1206,13 +1432,14 @@ DDS_TypeCode* CalculatorReply_unionPlugin::get_typecode()
                     },
                     0,
                     1,
-                    1,
+                    (RTICdrLong)0xCBC6CEAA,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_NONKEY_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
-                },
+                }
+                ,
                 {
                     (char *)"subtraction",
                     {
@@ -1223,53 +1450,54 @@ DDS_TypeCode* CalculatorReply_unionPlugin::get_typecode()
                     },
                     0,
                     1,
-                    2,
+                    (RTICdrLong)0xCA019A14,
                     NULL,
-                    DDS_BOOLEAN_FALSE,
+                    RTI_CDR_NONKEY_MEMBER,
                     DDS_PRIVATE_MEMBER,
-                    0,
+                    1,
                     NULL
                 }
     };
 
-    static DDS_TypeCode CalculatorReply_union_g_tc =
+    static DDS_TypeCode Calculator_Return_g_tc =
     {{
          DDS_TK_UNION,
          DDS_BOOLEAN_FALSE,
          -1,
-         (char*)"CalculatorReply_union",
+         (char*)"Calculator_Return",
          NULL,
          0,
          0,
          NULL,
-         2,
-         CalculatorReply_union_g_tc_members,
+         2 + 1,
+         Calculator_Return_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        CalculatorReply_union_g_tc_members[1 - 1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::additionReplyPlugin::get_typecode();
-        CalculatorReply_union_g_tc_members[2 - 1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::subtractionReplyPlugin::get_typecode();
+        Calculator_Return_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::UnknownOperationPlugin::get_typecode();
+        Calculator_Return_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::addition_ResultPlugin::get_typecode();
+        Calculator_Return_g_tc_members[2]._representation._typeCode = (RTICdrTypeCode*)CalculatorPlugin::subtraction_ResultPlugin::get_typecode();
 
-        CalculatorReply_union_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
+        Calculator_Return_g_tc._data._typeCode = (RTICdrTypeCode*)&DDS_g_tc_long;
 
         is_initialized = true;
     }
 
-    return &CalculatorReply_union_g_tc;
+    return &Calculator_Return_g_tc;
 }
 
-DDS_TypeCode* CalculatorReplyPlugin::get_typecode()
+DDS_TypeCode* Calculator_ReplyPlugin::get_typecode()
 {
-    //printf("=> CalculatorReplyPlugin::get_typecode\n");
+    //printf("=> Calculator_ReplyPlugin::get_typecode\n");
     static bool is_initialized = false;
 
-    static DDS_TypeCode_Member CalculatorReply_g_tc_members[2] =
+    static DDS_TypeCode_Member Calculator_Reply_g_tc_members[2] =
     {
         // TODO Add header.
         {
-            (char *)"_header",
+            (char *)"header",
             {
                 0,
                 DDS_BOOLEAN_FALSE,
@@ -1280,13 +1508,13 @@ DDS_TypeCode* CalculatorReplyPlugin::get_typecode()
             0,
             0,
             NULL,
-            DDS_BOOLEAN_FALSE,
+            RTI_CDR_REQUIRED_MEMBER,
             DDS_PRIVATE_MEMBER,
-            0,
+            1,
             NULL
         },
         {
-            (char *)"unio",
+            (char *)"reply",
             {
                 0,
                 DDS_BOOLEAN_FALSE,
@@ -1297,14 +1525,14 @@ DDS_TypeCode* CalculatorReplyPlugin::get_typecode()
             0,
             0,
             NULL,
-            DDS_BOOLEAN_FALSE,
+            RTI_CDR_REQUIRED_MEMBER,
             DDS_PRIVATE_MEMBER,
-            0,
+            1,
             NULL
         }
     };
 
-    static DDS_TypeCode CalculatorReply_g_tc =
+    static DDS_TypeCode Calculator_Reply_g_tc =
     {{
          DDS_TK_STRUCT,
          DDS_BOOLEAN_FALSE,
@@ -1315,24 +1543,24 @@ DDS_TypeCode* CalculatorReplyPlugin::get_typecode()
          0,
          NULL,
          2,
-         CalculatorReply_g_tc_members,
+         Calculator_Reply_g_tc_members,
          DDS_VM_NONE
     }};
     
     if(!is_initialized)
     {
-        CalculatorReply_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::ReplyHeaderPlugin::get_typecode();
-        CalculatorReply_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)CalculatorReply_unionPlugin::get_typecode();
+        Calculator_Reply_g_tc_members[0]._representation._typeCode = (RTICdrTypeCode *)eprosima::rpc::protocol::dds::ReplyHeaderPlugin::get_typecode();
+        Calculator_Reply_g_tc_members[1]._representation._typeCode = (RTICdrTypeCode *)Calculator_ReturnPlugin::get_typecode();
 
         is_initialized = true;
     }
 
-    return &CalculatorReply_g_tc;
+    return &Calculator_Reply_g_tc;
 }
 
-struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
+struct PRESTypePlugin *Calculator_ReplyPlugin::new_plugin(void)
 {
-    //printf("=> CalculatorReplyPlugin::new_plugin\n");
+    //printf("=> Calculator_ReplyPlugin::new_plugin\n");
     struct PRESTypePlugin *plugin = NULL;
     const struct PRESTypePluginVersion PLUGIN_VERSION = PRES_TYPE_PLUGIN_VERSION_2_0;
 
@@ -1345,20 +1573,20 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
         /* set up parent's function pointers */
         plugin->onParticipantAttached =
             (PRESTypePluginOnParticipantAttachedCallback)
-            CalculatorReplyPlugin::on_participant_attached;
+            Calculator_ReplyPlugin::on_participant_attached;
         plugin->onParticipantDetached =
             (PRESTypePluginOnParticipantDetachedCallback)
-            CalculatorReplyPlugin::on_participant_detached;
+            Calculator_ReplyPlugin::on_participant_detached;
         plugin->onEndpointAttached =
             (PRESTypePluginOnEndpointAttachedCallback)
-            CalculatorReplyPlugin::on_endpoint_attached;
+            Calculator_ReplyPlugin::on_endpoint_attached;
         plugin->onEndpointDetached =
             (PRESTypePluginOnEndpointDetachedCallback)
-            CalculatorReplyPlugin::on_endpoint_detached;
+            Calculator_ReplyPlugin::on_endpoint_detached;
 
         plugin->copySampleFnc =
             (PRESTypePluginCopySampleFunction)
-            CalculatorReplyPlugin::copy_sample;
+            Calculator_ReplyPlugin::copy_sample;
         plugin->createSampleFnc =
             (PRESTypePluginCreateSampleFunction)
             PRESTypePluginDefaultEndpointData_createSample;
@@ -1368,16 +1596,16 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
 
         plugin->serializeFnc =
             (PRESTypePluginSerializeFunction)
-            CalculatorReplyPlugin::serialize;
+            Calculator_ReplyPlugin::serialize;
         plugin->deserializeFnc =
             (PRESTypePluginDeserializeFunction)
-            CalculatorReplyPlugin::deserialize;
+            Calculator_ReplyPlugin::deserialize;
         plugin->getSerializedSampleMaxSizeFnc =
             (PRESTypePluginGetSerializedSampleMaxSizeFunction)
-            CalculatorReplyPlugin::get_serialized_sample_max_size;
+            Calculator_ReplyPlugin::get_serialized_sample_max_size;
         plugin->getSerializedSampleMinSizeFnc =
             (PRESTypePluginGetSerializedSampleMinSizeFunction)
-            CalculatorReplyPlugin::get_serialized_sample_min_size;
+            Calculator_ReplyPlugin::get_serialized_sample_min_size;
 
 
         plugin->getSampleFnc =
@@ -1390,7 +1618,7 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
 
         plugin->getKeyKindFnc =
             (PRESTypePluginGetKeyKindFunction)
-            CalculatorReplyPlugin::get_key_kind;
+            Calculator_ReplyPlugin::get_key_kind;
 
 
         /* These functions are only used for keyed types. As this is not a keyed
@@ -1407,7 +1635,7 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
         plugin->serializedSampleToKeyHashFnc = NULL;
         plugin->serializedKeyToKeyHashFnc = NULL;
 
-        plugin->typeCode =  (struct RTICdrTypeCode *)CalculatorReplyPlugin::get_typecode();
+        plugin->typeCode =  (struct RTICdrTypeCode *)Calculator_ReplyPlugin::get_typecode();
 
         plugin->languageKind = PRES_TYPEPLUGIN_DDS_TYPE; 
 
@@ -1420,7 +1648,7 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
             PRESTypePluginDefaultEndpointData_returnBuffer;
         plugin->getSerializedSampleSizeFnc =
             (PRESTypePluginGetSerializedSampleSizeFunction)
-            CalculatorReplyPlugin::get_serialized_sample_size;
+            Calculator_ReplyPlugin::get_serialized_sample_size;
 
         plugin->endpointTypeName = m_typename;
 
@@ -1431,28 +1659,28 @@ struct PRESTypePlugin *CalculatorReplyPlugin::new_plugin(void)
 }
 
 void
-CalculatorReplyPlugin::delete_plugin(struct PRESTypePlugin *plugin)
+Calculator_ReplyPlugin::delete_plugin(struct PRESTypePlugin *plugin)
 {
-    //printf("=> CalculatorReplyPlugin::delete_plugin\n");
+    //printf("=> Calculator_ReplyPlugin::delete_plugin\n");
     RTIOsapiHeap_freeStructure(plugin);
 }
 
-bool CalculatorReplyPlugin::register_type(DDSDomainParticipant *participant, const char *type_name)
+bool Calculator_ReplyPlugin::register_type(DDSDomainParticipant *participant, const char *type_name)
 {
-    //printf("=> CalculatorReplyPlugin::register_type\n");
+    //printf("=> Calculator_ReplyPlugin::register_type\n");
     bool returnedValue = false;
     struct PRESTypePlugin *typeDDSPlugin = NULL;
     static DDSTypeSupport *typePlugin = NULL;
 
     if(participant != NULL)
     {
-        typeDDSPlugin = CalculatorReplyPlugin::new_plugin();
+        typeDDSPlugin = Calculator_ReplyPlugin::new_plugin();
 
         if(typeDDSPlugin != NULL)
         {
             if(typePlugin == NULL)
             {
-                typePlugin = new CalculatorReplyPlugin();
+                typePlugin = new Calculator_ReplyPlugin();
             }
 
             typeDDSPlugin->_userBuffer = (PRESWord*)typePlugin;
@@ -1460,7 +1688,7 @@ bool CalculatorReplyPlugin::register_type(DDSDomainParticipant *participant, con
             if(DDS_DomainParticipant_register_type(participant->get_c_domain_participantI(), type_name, typeDDSPlugin, NULL) == DDS_RETCODE_OK)
                 returnedValue = true;
 
-            CalculatorReplyPlugin::delete_plugin(typeDDSPlugin);
+            Calculator_ReplyPlugin::delete_plugin(typeDDSPlugin);
         }
     }
 
@@ -1468,25 +1696,25 @@ bool CalculatorReplyPlugin::register_type(DDSDomainParticipant *participant, con
 }
 
 
-DDSDataReader* CalculatorReplyPlugin::create_datareaderI(DDSDataReader* dataReader)
+DDSDataReader* Calculator_ReplyPlugin::create_datareaderI(DDSDataReader* dataReader)
 {
-    return new CalculatorReplyDataReader(dataReader);
+    return new Calculator_ReplyDataReader(dataReader);
 }
 
-DDS_ReturnCode_t CalculatorReplyPlugin::destroy_datareaderI(DDSDataReader* dataReader)
+DDS_ReturnCode_t Calculator_ReplyPlugin::destroy_datareaderI(DDSDataReader* dataReader)
 {
-    delete (CalculatorReplyDataReader*)dataReader;
+    delete (Calculator_ReplyDataReader*)dataReader;
     return DDS_RETCODE_OK;
 }
 
-DDSDataWriter* CalculatorReplyPlugin::create_datawriterI(DDSDataWriter* dataWriter)
+DDSDataWriter* Calculator_ReplyPlugin::create_datawriterI(DDSDataWriter* dataWriter)
 {
-    return new CalculatorReplyDataWriter(dataWriter);
+    return new Calculator_ReplyDataWriter(dataWriter);
 }
 
-DDS_ReturnCode_t CalculatorReplyPlugin::destroy_datawriterI(DDSDataWriter* dataWriter)
+DDS_ReturnCode_t Calculator_ReplyPlugin::destroy_datawriterI(DDSDataWriter* dataWriter)
 {
-    delete (CalculatorReplyDataWriter*)dataWriter;
+    delete (Calculator_ReplyDataWriter*)dataWriter;
     return DDS_RETCODE_OK;
 }
 

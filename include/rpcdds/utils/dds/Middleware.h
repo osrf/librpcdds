@@ -9,18 +9,25 @@
 #ifndef _UTILS_DDS_MIDDLEWARE_H_
 #define _UTILS_DDS_MIDDLEWARE_H_
 
+#include <cstdint>
+
 #if defined(RTI_WIN32) || defined(RTI_LINUX)
+
+#if defined(_WIN32) && defined(NDDS_DLL_VARIABLE)
+class __declspec(dllimport) DDSEntity;
+class __declspec(dllimport) DDSDomainEntity;
+#endif
 
 #include "ndds_namespace_cpp.h"
 
-#define PARTICIPANT_QOS_DEFAULT DDS::PARTICIPANT_QOS_DEFAULT
-#define PUBLISHER_QOS_DEFAULT DDS::PUBLISHER_QOS_DEFAULT
-#define TOPIC_QOS_DEFAULT DDS::TOPIC_QOS_DEFAULT
-#define SUBSCRIBER_QOS_DEFAULT DDS::SUBSCRIBER_QOS_DEFAULT
-#define STATUS_MASK_NONE DDS::STATUS_MASK_NONE
-#define BOOLEAN_FALSE DDS::BOOLEAN_FALSE
-#define BOOLEAN_TRUE DDS::BOOLEAN_TRUE
-#define strdup DDS::String_dup
+#define PARTICIPANT_QOS_DEFAULT DDS_PARTICIPANT_QOS_DEFAULT
+#define PUBLISHER_QOS_DEFAULT DDS_PUBLISHER_QOS_DEFAULT
+#define TOPIC_QOS_DEFAULT DDS_TOPIC_QOS_DEFAULT
+#define SUBSCRIBER_QOS_DEFAULT DDS_SUBSCRIBER_QOS_DEFAULT
+#define STATUS_MASK_NONE DDS_STATUS_MASK_NONE
+#define BOOLEAN_FALSE DDS_BOOLEAN_FALSE
+#define BOOLEAN_TRUE DDS_BOOLEAN_TRUE
+#define strdup DDS_String_dup
 #define EPROSIMA_UINT32 RTI_UINT32
 
 
@@ -49,7 +56,7 @@ namespace eprosima
         {
             namespace dds
             {
-                void get_guid(unsigned int *id, DDS::DataWriter *datawriter);
+                void get_guid(uint8_t (&id)[16], DDS::DataWriter *datawriter);
 
                 void set_redundant_feature(DDS::DataReader *datareader, DDS::DataReaderQos &rQos);
 

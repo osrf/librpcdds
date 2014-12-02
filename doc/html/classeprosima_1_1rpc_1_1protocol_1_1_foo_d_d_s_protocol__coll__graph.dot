@@ -1,0 +1,12 @@
+digraph "eprosima::rpc::protocol::FooDDSProtocol"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="eprosima::rpc::protocol\l::FooDDSProtocol",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="eprosima::rpc::protocol\l::Protocol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classeprosima_1_1rpc_1_1protocol_1_1_protocol.html",tooltip="This abstract class represents the protocol used by the RPCs. It serializes and deserializes the info..."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _FooDDS_Foo_impl" ,fontname="Helvetica"];
+  Node3 [label="FooDDS::FooServerImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_foo_d_d_s_1_1_foo_server_impl.html",tooltip="This class is the skeleton of the servant and its remote procedures has to be implemented. "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FooDDS::Foo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_foo_d_d_s_1_1_foo.html",tooltip="This class represents the interface Foo defined by the user in the IDL file. "];
+}

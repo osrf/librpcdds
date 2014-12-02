@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_proxy_transport.html" title="This class is the base of all proxies that implement a transport using DDS." alt="" coords="697,59,983,88"/>
-<area shape="rect" id="node4" href="$classeprosima_1_1rpc_1_1transport_1_1_proxy_transport.html" title="This interface is the base of all classes that implement a transport that can be..." alt="" coords="289,5,545,35"/>
-<area shape="rect" id="node6" href="$classeprosima_1_1rpc_1_1transport_1_1_transport.html" title="This class is the base of all classes that implement a transport that could be used..." alt="" coords="7,5,228,35"/>
-<area shape="rect" id="node8" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_transport.html" title="This class is the base of all classes that implement a transport using DDS. This..." alt="" coords="292,59,543,88"/>
-<area shape="rect" id="node10" href="$classeprosima_1_1rpc_1_1transport_1_1dds_1_1_async_thread.html" title="This class is a separated thread used to manage asynchronous tasks." alt="" coords="280,112,555,141"/>
-</map>

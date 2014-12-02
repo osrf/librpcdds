@@ -11,7 +11,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-        <ClCompile Include="CalculatorExceptions.cxx">
+        <ClCompile Include="CalculatorExtension.cxx">
           <Filter>Source Files</Filter>
         </ClCompile>
         
@@ -49,7 +49,7 @@
         
   </ItemGroup>
   <ItemGroup>
-        <ClInclude Include="CalculatorExceptions.h">
+        <ClInclude Include="CalculatorExtension.h">
           <Filter>Header Files</Filter>
         </ClInclude>
         

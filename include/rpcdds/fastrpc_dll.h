@@ -58,13 +58,15 @@
 #include "rpcdds/fastrpc_version.h"
 
 // Set properties.
-//#define EPROSIMA_LIB_NAME fastrpc
+#if !defined(EPROSIMA_LIB_NAME )
+#define EPROSIMA_LIB_NAME fastrpc
+#endif
 
 #if defined(EPROSIMA_ALL_DYN_LINK) || defined(FASTRPC_DYN_LINK)
 #define EPROSIMA_DYN_LINK
 #endif
 
-#include "eProsima_cpp/eProsima_auto_link.h"
+#include "eProsima_cpp/config/eProsima_auto_link.h"
 #endif // auto-linking disabled
 
 #endif // _CPP_FASTRPC_DLL_H_

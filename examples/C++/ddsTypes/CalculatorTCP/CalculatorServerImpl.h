@@ -1,8 +1,8 @@
 /*************************************************************************
- * Copyright (c) 2012 eProsima. All rights reserved.
+ * Copyright (c) 2013 eProsima. All rights reserved.
  *
  * This generated file is licensed to you under the terms described in the
- * FASTRPC_LICENSE file included in this FASTRPC distribution.
+ * rpcdds_LICENSE file included in this rpcdds distribution.
  *
  *************************************************************************
  * 
@@ -18,25 +18,23 @@
 #include "rpcdds/utils/Messages.h"
 #include "Calculator.h"
 
+#include "CalculatorExtension.h"
+
 /*!
  * @brief This class is the skeleton of the servant and its remote procedures has to be implemented.
  * @ingroup CALCULATOR
  */
-class CalculatorServerImpl
+class CalculatorServerImpl : public CalculatorExt
 {
     public:
 
-        /// \brief The default constructor.
+        //! @brief The default constructor.
         CalculatorServerImpl(){}
 
-        /// \brief The default destructor.
+        //! @brief Destructor.
         virtual ~CalculatorServerImpl(){}
 
-        /// \brief Skeleton of the operation addition
-        virtual DDS_Long addition(/*in*/ DDS_Long value1, /*in*/ DDS_Long value2) = 0;
 
-        /// \brief Skeleton of the operation subtraction
-        virtual DDS_Long subtraction(/*in*/ DDS_Long value1, /*in*/ DDS_Long value2) = 0;
 ;
 };
 
